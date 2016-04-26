@@ -5,13 +5,21 @@
 <body>
 <div id="solMenuContent">
 	<ul>		
-		<a href="#">
-			<li>LINK1</li>
+		<a href="index.php?sayfa=profil">
+			<li>PROFİL</li>
 				
 		</a>
 		
-		<a href="#">
-			<li>LINK2</li>
+		<a href="index.php?sayfa=mesajlar">
+			<li>MESAJLAR</li>
+				
+		</a>
+		<a href="index.php?sayfa=projeler">
+			<li>PROJELER</li>
+				
+		</a>
+		<a href="index.php?sayfa=sosyalhesaplar">
+			<li>SOSYAL HESAPLAR</li>
 				
 		</a>
 
