@@ -1,8 +1,4 @@
-<html>
-<head>
-<link href="solMenuContent.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
+
 <div id="solMenuContent">
 	<ul>		
 		<a href="index.php?sayfa=profil">
@@ -27,5 +23,3 @@
 
 
 </div>
-</body
-</html>
