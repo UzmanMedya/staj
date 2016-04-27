@@ -14,7 +14,7 @@
 		else if($sayfa_adi=="projeler"){
 			include_once("projeler.php");
 		}
-		else if($sayfa_adi=="iletisim"){
+		else if($sayfa_adi=="sosyalhesaplar"){
 			include_once("include/sosyalHesaplar.php");
 		}
 		else
@@ -23,12 +23,7 @@
 		}
 	}
 
-	function temizle($text)
-	{
-		$text =htmlspecialchars($text);
-		//...diðer temizleme iþlemleri
-		return $text;
-	}
+	
 
 	
 	
