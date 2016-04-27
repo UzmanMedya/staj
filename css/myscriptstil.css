@@ -5,12 +5,6 @@
 	border: 0;
 }
 
-.islem > span{
-	cursor:pointer;
-	padding: 0;
-	margin: 0;
-	border: 0;
-}
 
 .ana{
 	margin-left:100px;
@@ -36,15 +30,6 @@
 	height:5%;
 	background:#ccc;
 	text-align:center;
-	padding: 0;
-	margin: 0;
-	border: 0;
-}
-
-.islem{
-	width:100%;
-	height:10%;
-	background:#aaa;
 	padding: 0;
 	margin: 0;
 	border: 0;
