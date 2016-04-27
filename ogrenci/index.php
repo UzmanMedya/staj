@@ -11,6 +11,10 @@
 
 <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
 <script type="text/javascript" src="js/bildirim.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css" />
+<script src="../bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<div id="header">
