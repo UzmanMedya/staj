@@ -28,6 +28,6 @@
 	</div>
 	</div>
 	
-<input type="button" value="KAYDET" name="kaydet" class="btn btn-default btn-block" />
+<input type="button" value="KAYDET" name="kaydet" class="btn btn-success btn-block" />
 </form>
 </div>
