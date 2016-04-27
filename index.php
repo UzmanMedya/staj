@@ -10,6 +10,10 @@
 <script type="text/javascript" src="js/jquery1.10.1nin.js"></script>
 <script type="text/javascript" src="js/myscript.js"></script>
 <link rel="stylesheet" type="text/css" href="css/myscriptstil.css" />
+
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css" />
+<script src="bootstrap/js/bootstrap.min.js"></script>
 <?php
 	include_once("/include/function.php");
 	include_once("session.php");
