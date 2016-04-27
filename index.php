@@ -22,7 +22,6 @@
 	</div>
 	<div id="main">
 		<?php sayfa_getir();?>
-		
 	</div>
 	<div id="footer">
 		<?php include_once("/include/mainFooter.php");?>

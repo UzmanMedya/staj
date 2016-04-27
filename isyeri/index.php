@@ -18,9 +18,7 @@
 	</div>
 	<div id="main">
 		<div id="left"><?php include_once("/include/solMenuContent.php");?></div>
-		<div id="right">
-		
-		</div>
+		<div id="right"></div>
 		<div class="clear"></div>
 	</div>
 	<div id="footer">
