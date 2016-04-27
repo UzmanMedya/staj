@@ -23,12 +23,12 @@
 	</div>
 	<div id="main">
 		<div id="left"><?php include_once("/include/solMenuContent.php");?></div>
-		<div id="right">
+		
 		<div id="right"><?php
 		 include_once("include/function.php");
 		 sayfa_getir();
 		?></div>
-		</div>
+		
 		<div class="clear"></div>
 	</div>
 	<div id="footer">
