@@ -23,6 +23,7 @@ if(n.parent().next("#bitti").children().index() == 0)
 		a=1;
 		$(".secici").empty();
 		$(".secici").append(a+"/8");
+		$(".secici").attr("id",a);
 		
 	}
 	else{
@@ -31,6 +32,7 @@ if(n.parent().next("#bitti").children().index() == 0)
 		$(".secici").empty();
 		a++;
 		$(".secici").append(a+"/8");
+		$(".secici").attr("id",a);
 		n=n.parent().next("li").children();
 	}
 	
@@ -41,7 +43,6 @@ cagir = function(){
 };
 
 $("#ileri").click(ileriGos);
-//setInterval(ileriGos, 3000);
 cagir();
 
 
