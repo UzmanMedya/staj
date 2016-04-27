@@ -1,0 +1,23 @@
+#isyeri_hakkinda{
+	width:100%;
+}
+#isyeri_hakkinda_baslik{
+	font-size:14px;
+}
+#isyeri_hakkinda_onsoz{
+	font-size:16px;
+}
+#isyeri_hakkinda_icerik{
+	font-size:14px;
+}
+#isyeri_hakkinda_textarea{
+	font-size:12px;
+	width:200px;
+	height:250px;
+}
+#isyeri_hakkinda_duzenle{
+	font-size:14px;
+	width:80px;
+	height:50px;
+	margin-left:45px;
+}
