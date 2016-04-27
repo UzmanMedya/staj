@@ -10,6 +10,7 @@
 <link rel="stylesheet" type="text/css" href="css/mainStyle.css">
 <link rel="stylesheet" type="text/css" href="css/profil.css">
 <link rel="stylesheet" type="text/css" href="css/projeler.css">
+<link rel="stylesheet" type="text/css" href="css/sosyalHesaplarStyle.css">
 </head>
 <body>
 	<div id="header">

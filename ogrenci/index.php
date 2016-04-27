@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="css/solMenuContent.css">
 <link rel="stylesheet" type="text/css" href="css/mainHeader.css">
 <link rel="stylesheet" type="text/css" href="css/mainStyle.css">
+<link rel="stylesheet" type="text/css" href="css/sosyalHesaplarStyle.css">
 </head>
 <body>
 	<div id="header">
