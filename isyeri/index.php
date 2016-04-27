@@ -24,9 +24,10 @@
 
 		<div id="right"><?php
 		if(@$_GET['sayfa']=="iletisim") include_once("/include/sosyalHesaplar.php");
-		if(@$_GET['sayfa']=="profil") echo "PROFİL EKLE";
+		if(@$_GET['sayfa']=="profil")include_once("/include/profil.php");
 		if(@$_GET['sayfa']=="mesajlar") include_once("/include/mesajlar.php");
 		if(@$_GET['sayfa']=="projeler") include_once("/include/projeler.php");
+		if(@$_GET['sayfa']=="hakkinda") include_once("/include/hakkinda.php");
 		?></div>
 
 
