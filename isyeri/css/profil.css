@@ -1,0 +1,33 @@
+#profil-content{
+	width:100%;
+}
+#foto{
+	width:150px;
+	height:150px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:20px;
+}
+#adi{
+	font-size:large;
+	margin-left:15%;
+}
+#soyadi{
+	font-size:large;
+	
+}
+#il{
+	margin-left:10%;
+	
+}
+#ilce{
+	
+}
+#tamadres{
+	margin-left:10%;
+	margin-right:10%;
+}
+#duzenle{
+	height:30px;
+		margin-left:20%;
+}

@@ -1,0 +1,16 @@
+#proje-baslik{
+	margin-left:25px;
+	font-size:25px;
+}
+#proje-icerik{
+	margin-left:5px;
+	min-height:50px;
+}
+#proje-ekleyen{
+	margin-left:5px;
+	float:right;
+}
+#proje-tarih{
+	margin-left:5px;
+	float:right;
+}
