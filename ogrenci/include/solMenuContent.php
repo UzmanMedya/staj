@@ -15,7 +15,7 @@
 				
 		</a>
 		<a href="index.php?sayfa=sosyalhesaplar">
-			<li>SOSYAL HESAPLAR</li>
+			<li>İLETİŞİM</li>
 				
 		</a>
 
