@@ -8,14 +8,14 @@
 	<div class="satir">
     	<div class="sol">Mail:</div>
         <div class="sag">
-              <input type="text" name="mail" >
+              <input type="email" name="mail" class="form-control">
         </div>
     </div>
    <div class="satir">
     	<div class="sol">Parola:</div>
         <div class="sag">
             
-              <input type="password" name="parola">
+              <input type="password" name="parola" class="form-control">
             
         </div>
     </div>
@@ -23,14 +23,14 @@
     	<div class="sol">Parola Tekrar:</div>
         <div class="sag">
            
-              <input type="password" name="parolatekrar">
+              <input type="password" name="parolatekrar" class="form-control">
              
         </div>
     </div>
      <div class="satir">
     	<div class="sol">Yetki:</div>
         <div class="sag">
-            <select name="yetki" id="yetki" size="1">
+            <select name="yetki" id="yetki" size="1" class="form-control">
 			<option selected value="0">Öğrenci</option>
             <option value="1">Akademisyen</option>
 			<option value="2">İşveren</option></select>
