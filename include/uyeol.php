@@ -41,7 +41,7 @@
         <?php include_once("ogrenciuyeol.php");?>
     </div>
     <div id="gonder">
-<input name="kaydol" type="button" value="Kaydol" />
+<input name="kaydol" type="button" value="Kaydol" class="btn btn-default" />
 </div>
 </div>
 </div>

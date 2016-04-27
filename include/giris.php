@@ -23,19 +23,19 @@ Giriş<br />aciklama<br /><br />bölümü<br /><br />
 	<div class="satir">
     	<div class="sol">Kullanıcı Adı:</div>
         <div class="sag">
-              <input type="text" name="kullaniciadi" >
+              <input type="text" name="kullaniciadi" class="form-control">
         </div>
     </div>
    <div class="satir">
     	<div class="sol">Şifre:</div>
         <div class="sag">
             
-              <input type="password" name="sifre">
+              <input type="password" name="sifre" class="form-control">
             
         </div>
     </div>
     <div id="girisyap">
-<input name="giris" type="submit" value="giris" />
+<input name="giris" type="submit" value="giris" class="btn btn-default" />
 </div>
 </div>
 </div>
