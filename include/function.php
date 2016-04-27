@@ -13,7 +13,7 @@
 		}
 		else
 		{
-			//slaydır çağırılacak
+		  include_once("include/slider.php");
 		}
 	}
 
