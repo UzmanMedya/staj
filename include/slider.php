@@ -13,4 +13,5 @@
 		</ul>
 	</div>
 	<div class="secici">1/8</div>
+	<div class="islem"><span id="geri">GERİ</span><span id="ileri" style="float:right;">İLERİ</span></div>
 </div>
