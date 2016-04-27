@@ -1,33 +1,87 @@
-#profil-content{
+#profil_content{
 	width:100%;
+	height:100%;
 }
 #foto{
 	width:150px;
 	height:150px;
-	margin-left:auto;
-	margin-right:auto;
-	margin-bottom:20px;
+	margin-left:40%;
+	margin-top:40px;
 }
 #adi{
-	font-size:large;
-	margin-left:15%;
+	width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 #soyadi{
-	font-size:large;
+	width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 	
 }
 #il{
-	margin-left:10%;
+	width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 	
 }
 #ilce{
-	
+	width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 #tamadres{
-	margin-left:10%;
-	margin-right:10%;
+width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 #duzenle{
 	height:30px;
 		margin-left:20%;
+}
+
+
+.inputText{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.buttonSosyalHesapKaydet {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.buttonSosyalHesapKaydet:hover {
+    background-color: #45a049;
 }
