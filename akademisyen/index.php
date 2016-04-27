@@ -16,7 +16,14 @@
 	</div>
 	<div id="main">
 		<div id="left"><?php include_once("/include/solMenuContent.php");?></div>
-		<div id="right"></div>
+		<div id="right">
+		<div id="right"><?php
+		if(@$_GET['sayfa']=="iletisim") include_once("/include/sosyalHesaplar.php");
+		if(@$_GET['sayfa']=="profil") echo"PROFİL EKLENECEK";
+		if(@$_GET['sayfa']=="mesajlar") include_once("/include/mesajlar.php");
+		if(@$_GET['sayfa']=="projeler") include_once("/include/projeler.php");
+		?></div>
+		</div>
 		<div class="clear"></div>
 	</div>
 	<div id="footer">
