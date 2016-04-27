@@ -2,12 +2,13 @@
 <div id="profil_content">
 
 <img id="foto" src=""  ><br/>
-Adı :<label id="adi" >Ömür</label> Soyadı :<label id="soyadi">Buruk</label><br/><br>
-İl :<label id="il"  >Trabzon</label>  İlçe :<label id="ilce" >Akçaabat</label>
+Adı :<input type="text" id="adi" value="Ömür"/> Soyadı :<input type="text" id="soyadi" value="Buruk"/><br/><br>
+İl :<input type="text" id="il" value="Trabzon"/>  İlçe :<input type="text" id="ilce" value="Akçaabat"/>
 <br/>
 <br/>
 Adres :
-<label id="tamadres">Balaban Caddesi Huzur Sokak No:17/B Daire: 4</label>
+<input type="text" id="tamadres" value="Balaban Caddesi Huzur Sokak No:17/B Daire: 4"/>
+
 <br>
 <input class="buttonSosyalHesapKaydet" type="submit" value="Düzenle" />
 
