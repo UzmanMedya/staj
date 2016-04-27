@@ -20,7 +20,7 @@
 	background-color:#15f;
 	line-height:35px;
 }
-#headerRight a
+#headerRight a,#bildirim
 {
 	margin-top:10px;
 	float:right;
@@ -72,4 +72,49 @@
 	top: -30px;
     right: -12px;
     cursor: pointer;
+}
+#headerRight #bildirim-icerik
+{	
+	display: none;
+	z-index: 999;
+    width: 300px;
+    position: absolute;
+    height: 260px;
+    margin-left: -150px;
+    border: 2px solid #948F89;
+    background-color: rgba(158, 158, 158, 0.56);
+    border-radius: 4px;
+    overflow-y: auto;
+  }
+  .bildirim{
+  	width: 98%;
+  	margin-left: auto;
+  	margin-right: auto;
+  	margin-top: 2px;
+  	height: 50px;
+  	background-color: #489;
+  }
+  #bildirim-icerik img#isaret{
+  	width: 28px;
+    height: 28px;
+    margin-left: 150px;
+    position: absolute;
+    margin-top: -25px;
+  }
+  #bildirim-icerik .bildirim a{
+  	float: none;
+  	margin: 0px;
+  	padding: 0px;
+  	width: 100%;height: 50px;
+  	color: #f2f2f2;
+  }
+  .bildirim a img{
+  	width: 50px;
+  	height: 50px;
+  	float: left;
+  	margin-right: 5px;
+  }
+#bildirim-icerik .bildirim a label,.bildirim a span{
+	width: 100%;
+	overflow: hidden;
 }
