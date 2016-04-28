@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* CSS Document */
+
+#ogrenciprofil{
+	height:100%;
+	width:100%;
+}
+
+#fotoraf{
+	margin:7px;
+	border-radius:50%;
+}
+#fotoraf img{border-radius:50%;}
+.user-info{
+	padding: 10px;
+    width: 75%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 70px;
+    height: 30px;
+    color: #00CCFF;
+    clear: bold;
+    margin-bottom: 5px;
+    border-left: 1px dotted #C7C7C7;
+}
+.user-info img{
+	position: absolute;
+    margin-left: -65px;
+}
+.user-info .etiket{
+	width:15%;
+	color:#CC6600;
+	float:left;
+	margin-left: 20px;
+}
+.user-info .etiket-deger{
+	margin-left: 20px;
+	width:70%;
+	float:left;
+}

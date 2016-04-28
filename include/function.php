@@ -77,6 +77,18 @@
 		}
 		}
 		
+		function kayitOlOgrenci($ogrenci){
+		 //
+		}
+		function kayitOlAkademisyen($akademisyen){
+		 //
+		}
+		function kayitOlIsYeri($isyeri){
+		 //
+		}
+		
+		
+		
 	
 	
 

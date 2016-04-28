@@ -1,8 +1,19 @@
-
+<?php
+if(@$_POST){
+		
+	$mail=@$_POST["kullaniciadi"];
+	$sifre=@$_POST["sifre"];
+	if($mail!="" && $sifre!=""){
+		
+		girisYap($mail,$sifre);
+		
+	}
+	?>
 <form name="form1" method="post" action="">
+
 <div id="genel">
 <div class="aciklama">
-Üyeol<br />açıklama<br /><br />bölümü
+Üyeol<br />Sosyal Staj Eğitim Platformu akademisyen, öğrenci ve iş yeri sahiplerinin buluştuğu nokta.<br /><br />bölümü
 </div>
 <div class="uyeol">
 	<div class="satir">

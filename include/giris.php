@@ -1,11 +1,11 @@
 <?php
 
 	if(@$_POST){
-		echo "geldi";
+		
 	$mail=@$_POST["kullaniciadi"];
 	$sifre=@$_POST["sifre"];
 	if($mail!="" && $sifre!=""){
-		echo "geldi";
+		
 		girisYap($mail,$sifre);
 		
 	}
