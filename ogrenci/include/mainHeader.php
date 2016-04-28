@@ -23,7 +23,7 @@
 				<div class="bildirim">
 					<a href="<?php echo 'index.php?sayfa=mesaj&id='.$i;?>">
 						<div>
-							<img />
+							<img src="../profil/user.png"/>
 							<span>Yeni mesaj</span><br/>
 							<label>asdsa asd :)</label>
 						</div>

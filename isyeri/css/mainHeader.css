@@ -114,6 +114,9 @@
   	margin-right: 5px;
   }
 #bildirim-icerik .bildirim a label,.bildirim a span{
-	width: 100%;
 	overflow: hidden;
+}
+.bildirim a label{
+	font-size: 12px;
+    font-weight: normal;
 }
