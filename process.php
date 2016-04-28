@@ -6,17 +6,17 @@
 		{
 			$rol =@$_POST["rol"];
 			/*
-				rol 0 :öğrenci
-				rol 1 :Akademisyen
-				rol 2 :İşyeri
+				rol 1 :öğrenci
+				rol 2 :Akademisyen
+				rol 3 :İşyeri
 			*/
-			if($rol == 0)
+			if($rol == 1)
 			{
 				include_once("/include/ogrenciuyeol.php");
-			}else if($rol == 1)
+			}else if($rol == 2)
 			{
 				include_once("/include/akademisyenuyeol.php");
-			}else if($rol == 2)
+			}else if($rol == 3)
 			{
 				include_once("/include/isyeriuyeol.php");
 			}

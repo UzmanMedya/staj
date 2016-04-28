@@ -43,9 +43,9 @@ if(@$_POST){
     	<div class="sol">Yetki:</div>
         <div class="sag">
             <select name="yetki" id="yetki" size="1" class="form-control">
-			<option selected value="0">Öğrenci</option>
-            <option value="1">Akademisyen</option>
-			<option value="2">İşveren</option></select>
+			<option selected value="1">Öğrenci</option>
+            <option value="2">Akademisyen</option>
+			<option value="3">İşveren</option></select>
 
         </div>
     </div>
