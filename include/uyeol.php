@@ -8,12 +8,13 @@ if(@$_POST){
 		girisYap($mail,$sifre);
 		
 	}
+}
 	?>
 <form name="form1" method="post" action="">
 
 <div id="genel">
 <div class="aciklama">
-Üyeol<br />Sosyal Staj Eğitim Platformu akademisyen, öğrenci ve iş yeri sahiplerinin buluştuğu nokta.<br /><br />bölümü
+Üyeol<br />Sosyal Staj Eğitim Platformu akademisyen, öğrenci ve iş yeri sahiplerinin buluştuğu nokta.<br /><br />
 </div>
 <div class="uyeol">
 	<div class="satir">

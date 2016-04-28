@@ -1,7 +1,7 @@
 
 <div id="profil_content">
 
-<img id="foto" src="img/twitter.png"  ><br/>
+<img id="foto" src="img/omurburuk.jpg"  ><br/>
 Adı :<input type="text" id="adi" value="Ömür"/> Soyadı :<input type="text" id="soyadi" value="Buruk"/><br/><br>
 İl :<input type="text" id="il" value="Trabzon"/>  İlçe :<input type="text" id="ilce" value="Akçaabat"/>
 <br/>
