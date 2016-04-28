@@ -59,8 +59,6 @@
 #bildirim{
 	height: 32px;
 	width: 32px;
-	padding: 5px;
-	padding: 3px;
 	border-radius: 50%;
 	background-color: rgb(203, 209, 224);
 }
@@ -69,6 +67,7 @@
 	position: relative;
 	color: #E62525;
 	font-size: 16px;
+	margin-top: 3px;
 	top: -30px;
     right: -12px;
     cursor: pointer;
