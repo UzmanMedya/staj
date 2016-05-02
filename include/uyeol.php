@@ -30,6 +30,7 @@ if(@$_POST["kaydol"])
 	}else if($yetki==2)//akademisyen
 	{
 		
+		require_once("akademisyen/include/akademisyen.php");
 
 		$akademisyen=new AkademisyenGuncelle();
 		
