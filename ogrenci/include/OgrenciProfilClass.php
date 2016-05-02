@@ -18,25 +18,11 @@ class Ogrenci
 	private $mail;
 	private $il;
 	private $ilce;
+	private $parola;
 	
-	function Ogrenci ($tcKimNo,$ad,$soyad,$dogumTarihi,$cinsiyet,$kalanAdres,$okulNu,$bolum,$telNu,$mail,$fotoraf,$fakulte,$universite,$sinif,$il,$ilce)
+	function Ogrenci ()
 	{
-		$this -> ad=$ad;
-		$this -> soyad=$soyad;
-		$this -> okulNu=$okulNu;
-		$this -> bolum=$bolum;
-		$this -> fotoraf=$fotoraf;
-		$this -> il=$il;
-		$this -> ilce=$ilce;
-		$this -> telNu=$telNu;
-		$this -> dogumTarihi=$dogumTarihi;
-		$this -> kalanAdres=$kalanAdres;
-		$this -> sinif=$sinif;
-		$this -> fakulte=$fakulte;
-		$this -> universite=$universite;
-		$this -> mail=$mail;
-		$this -> tcKimNo=$tcKimNo;
-		$this -> cinsiyet=$cinsiyet;
+		
 	}
 	function getId() 
 	{
@@ -161,6 +147,14 @@ class Ogrenci
 	function getIl() 
 	{
         $this->il;
+    }
+	function setParola($parola)
+	{  
+		$this -> parola = $parola; 
+	}
+	function getParola() 
+	{
+        $this->parola;
     }
 	
 	

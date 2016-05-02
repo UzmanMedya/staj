@@ -1,11 +1,37 @@
 <?php
-if(@$_POST){
+
+if(@$_POST["kaydol"])
+{
+	echo "qqq";
+	$yetki=@$_POST["yetki"];
+	if($yetki==1)//ogrenci
+	{
+		echo $yetki;
+		require_once("ogrenci/include/OgrenciProfilClass.php");
 		
-	$mail=@$_POST["kullaniciadi"];
-	$sifre=@$_POST["sifre"];
-	if($mail!="" && $sifre!=""){
 		
-		girisYap($mail,$sifre);
+		$ogrenci=new Ogrenci();
+		
+		
+		$ogrenci->setMail(@$_POST["mail"]);
+		$ogrenci->setParola(@$_POST["parola"]);
+		$ogrenci->setAd(@$_POST["adi"]);
+		$ogrenci->setSoyad(@$_POST["soyadi"]);
+		$ogrenci->setOkulNu(@$_POST["okulno"]);
+		$ogrenci->setTelNu(@$_POST["telno"]);
+		$ogrenci->setCinsiyet(@$_POST["cinsiyet"]);
+		$ogrenci->setDogumTarihi(@$_POST["dogumtarihi"]);
+		$ogrenci->setIl(@$_POST["sehir"]);
+		$ogrenci->setIlce(@$_POST["ilce"]);
+		$ogrenci->setKalanAdres(@$_POST["adres"]);
+		
+		kayitOlOgrenci($ogrenci);
+		
+	}else if($yetki==2)//akademisyen
+	{
+		
+	}else//işveren
+	{
 		
 	}
 }
@@ -53,7 +79,7 @@ if(@$_POST){
         <?php include_once("ogrenciuyeol.php");?>
     </div>
     <div id="gonder">
-<input name="kaydol" type="button" value="Kaydol" class="btn btn-success btn-block" />
+<input name="kaydol" type="submit" value="Kaydol" class="btn btn-success btn-block" />
 </div>
 </div>
 </div>

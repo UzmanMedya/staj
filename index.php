@@ -17,6 +17,7 @@
 <?php
 	include_once("/include/function.php");
 	include_once("session.php");
+	
 ?>
 <meta charset="utf-8"/>
 </head>

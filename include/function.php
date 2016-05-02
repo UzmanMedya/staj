@@ -83,14 +83,14 @@
 	}
 		
 	function kayitOlOgrenci($ogrenci){
-		 //
+		 //veritabı
 	}
 	function kayitOlAkademisyen($akademisyen){
-	 //
+	 //veritabı
 	}
 	
 	function kayitOlIsYeri($isyeri){
-		 //
+		 //veritabı
 	}
 		
 	function il_listele()
@@ -119,5 +119,8 @@
 			}
 		}
 	}
+	
+
+	
 
 ?>
