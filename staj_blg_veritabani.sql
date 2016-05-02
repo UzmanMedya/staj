@@ -1,7 +1,7 @@
--- phpMyAdmin SQL Dump
+﻿-- phpMyAdmin SQL Dump
 -- version 4.2.11
 -- http://www.phpmyadmin.net
---
+-- -
 -- Anamakine: 127.0.0.1
 -- Üretim Zamanı: 26 Nis 2016, 20:22:32
 -- Sunucu sürümü: 5.6.21
