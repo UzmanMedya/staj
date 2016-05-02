@@ -5,5 +5,5 @@
 	define("db","staj_blg_veritabani");
 
 	$conn = mysqli_connect(host,user,pass,db) or die("Veri tabanı bağlanti hatası");
-
+	
 ?>

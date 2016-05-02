@@ -40,16 +40,20 @@
     <div class="satir">
     	<div class="sol">Şehir:</div>
         <div class="sag">
-              <select name="sehir" size="1" class="form-control">
-			           <option value="61">Trabzon</option>
-                <option value="34">İstanbul</option>
+              <select name="sehir" size="1" id="il-sec" class="form-control">
+			           <option value="-1">ilk seç</option>
+                 <?php 
+                    il_listele();
+                ?>
               </select>
         </div>
     </div>
     <div class="satir">
     	<div class="sol">İlçe:</div>
         <div class="sag">
-              <input type="text" name="ilce" class="form-control"> 
+              <select name="ilce" size="1" id="ilce-sec" class="form-control">
+                 
+              </select>
         </div>
     </div>
      <div class="satir">

@@ -1,6 +1,6 @@
 <?php
 	
-	require_once("config.php");
+	require_once("include/config.php");
 
 	function sayfa_getir()
 	{
@@ -37,7 +37,8 @@
 			//Kaydedilemedi
 		}
 	}
-	function girisYap($mail,$sifre){
+	function girisYap($mail,$sifre)
+	{
 		$mail=temizle($mail);
 		$sifre=MD5($sifre);
 		global $conn;
@@ -45,12 +46,14 @@
 		
 		$sonuc =mysqli_query($conn,$query);
 		$sayi=@mysqli_num_rows($sonuc);
-		if($sayi>0){
+		if($sayi>0)
+		{
 			$array=mysqli_fetch_array($sonuc);
 			$rol=$array["rol"];
 			$mail=$array["mail"];
 			$id=$array["id"];
-			if($rol=="1"){
+			if($rol=="1")
+			{
 				$query ="select * from  tbl_ogrenci where login_id='$id' ";
 				$sonuc =mysqli_query($conn,$query);
 				$array=mysqli_fetch_array($sonuc);
@@ -58,7 +61,8 @@
 				$_SESSION["staj"]=new Session($array["user_id"],$array["adi"],$array["soyadi"],$array["mail"],"öğrenci");
 				printf( $_SESSION["staj"]);
 			}
-			if($rol=="2"){
+			if($rol=="2")
+			{
 				$query ="select * from  tbl_akademisyen where user_id='$id' ";
 				$sonuc =mysqli_query($conn,$query);
 				$array=mysqli_fetch_array($sonuc);
@@ -66,7 +70,8 @@
 				$_SESSION["staj"]=new Session($array["user_id"],$array["ad"],$array["soyad"],$rol,$mail);
 				header("Location: akademisyen/index.php");
 			}
-			if($rol=="3"){
+			if($rol=="3")
+			{
 				$query ="select * from  tbl_isyeri where user_id='$id' ";
 				$sonuc =mysqli_query($conn,$query);
 				$array=mysqli_fetch_array($sonuc);
@@ -75,21 +80,44 @@
 					printf( $_SESSION["staj"]);
 			}
 		}
-		}
+	}
 		
-		function kayitOlOgrenci($ogrenci){
+	function kayitOlOgrenci($ogrenci){
 		 //
-		}
-		function kayitOlAkademisyen($akademisyen){
-		 //
-		}
-		function kayitOlIsYeri($isyeri){
-		 //
-		}
-		
-		
-		
+	}
+	function kayitOlAkademisyen($akademisyen){
+	 //
+	}
 	
+	function kayitOlIsYeri($isyeri){
+		 //
+	}
+		
+	function il_listele()
+	{
+		global $conn;
+		$query = "select * from tbl_il";
+		$sonuc = mysqli_query($conn,$query);
+		if($sonuc)
+		{	
+			while ($row = mysqli_fetch_array($sonuc)) {
+				echo "<option value=".$row['id'].">".$row['il']."</option>";
+			}
+		}
+	}
 	
+	function ilce_listele($il_id)
+	{
+		global $conn;
+		$query ="select * from tbl_ilce where il_id = $il_id";
+		$sonuc =mysqli_query($conn,$query);
+		if($sonuc)
+		{
+			echo "<option value='-1'>ilçe seç</option>";
+			while ($row = mysqli_fetch_array($sonuc)) {
+				echo "<option value=".$row['id'].">".$row['ilce']."</option>";
+			}
+		}
+	}
 
 ?>

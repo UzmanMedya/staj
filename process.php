@@ -21,6 +21,11 @@
 				include_once("/include/isyeriuyeol.php");
 			}
 		}
+		else if(@$_GET["islem"]=="ilce_listele")
+		{
+			$il_id =temizle(@$_POST["sehir"]);
+			ilce_listele($il_id);
+		}
 	}
 
 ?>
