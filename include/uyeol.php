@@ -58,6 +58,16 @@ if(@$_POST["kaydol"])
 </div>
 <div class="uyeol">
 	<div class="satir">
+    	<div class="sol">Yetki:</div>
+        <div class="sag">
+            <select name="yetki" id="yetki" size="1" class="form-control">
+			<option selected value="1">Öğrenci</option>
+            <option value="2">Akademisyen</option>
+			<option value="3">İşveren</option></select>
+
+        </div>
+    </div>
+	<div class="satir">
     	<div class="sol">Mail:</div>
         <div class="sag">
               <input type="email" name="mail" class="form-control">
@@ -79,16 +89,7 @@ if(@$_POST["kaydol"])
              
         </div>
     </div>
-     <div class="satir">
-    	<div class="sol">Yetki:</div>
-        <div class="sag">
-            <select name="yetki" id="yetki" size="1" class="form-control">
-			<option selected value="1">Öğrenci</option>
-            <option value="2">Akademisyen</option>
-			<option value="3">İşveren</option></select>
 
-        </div>
-    </div>
     <div class="orta" id="secilenRol">
         <?php include_once("ogrenciuyeol.php");?>
     </div>
