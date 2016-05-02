@@ -6,6 +6,8 @@
 		private $soyadi;
 		private $tc;
 		private $unvan;
+		private $mail;
+		private $parola;
 		
 		function getId(){
 			return $this->id;
@@ -40,6 +42,19 @@
 		}
 		function setUnvan($unvan){
 			$this->unvan=$unvan;
+		}
+		
+		function getMail(){
+			return $this->mail;
+		}
+		function setMail($mail){
+			$this->mail=$mail;
+		}
+		function getParola(){
+			return $this->parola;
+		}
+		function setParola($parola){
+			$this->parola=$parola;
 		}
 	}
 
