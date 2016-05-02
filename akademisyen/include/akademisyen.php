@@ -1,6 +1,6 @@
-<?php
+﻿<?php 
 	class AkademisyenGuncelle
-	{
+	{ 
 		private $id;
 		private $adi;
 		private $soyadi;

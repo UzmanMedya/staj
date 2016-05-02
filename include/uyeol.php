@@ -2,11 +2,11 @@
 
 if(@$_POST["kaydol"])
 {
-	echo "qqq";
+	
 	$yetki=@$_POST["yetki"];
 	if($yetki==1)//ogrenci
 	{
-		echo $yetki;
+		
 		require_once("ogrenci/include/OgrenciProfilClass.php");
 		
 		
@@ -30,6 +30,19 @@ if(@$_POST["kaydol"])
 	}else if($yetki==2)//akademisyen
 	{
 		
+
+		$akademisyen=new AkademisyenGuncelle();
+		
+		 
+		$akademisyen->setAdi(@$_POST["adi"]);
+		$akademisyen->setSoyadi(@$_POST["soyadi"]);
+		$akademisyen->setTc(@$_POST["tcno"]);
+		$akademisyen->setUnvan(@$_POST["unvan"]);
+		$akademisyen->setMail(@$_POST["mail"]);		
+		$akademisyen->setParola(@$_POST["parola"]);
+		
+		
+		kayitOlAkademisyen($akademisyen);
 	}else//işveren
 	{
 		

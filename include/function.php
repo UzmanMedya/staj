@@ -1,7 +1,7 @@
 <?php
 	
 	require_once("include/config.php");
-
+ 
 	function sayfa_getir()
 	{
 		$sayfa_adi=@$_GET["sayfa"];
@@ -86,6 +86,7 @@
 		 //veritabı
 	}
 	function kayitOlAkademisyen($akademisyen){
+
 	 //veritabı
 	}
 	
