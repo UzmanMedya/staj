@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	require_once("include/config.php");
+	$_SESSION['uyeId']=1;
+	echo $_SESSION['uyeId'];
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -185,6 +192,22 @@
 
  </div>
 </div>
+
+
+<?php
+
+global $conn;
+
+$sorgu="SELECT * FROM tbl_mesaj WHERE `gonderen_id`='".$_SESSION['uyeId']."'";
+$sonuc=mysqli_query($conn,$sorgu);
+
+if($sonuc){
+	while($sutun=mysqli_fetch_row($sonuc)){
+		echo $sutun[1]."<br/>";
+	}
+}
+
+?>
 
 <script>
 function mesajlarimmm(i) {
