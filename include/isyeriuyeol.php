@@ -29,7 +29,7 @@
      <div class="satir">
     	<div class="sol">Hizmet Alanı:</div>
         <div class="sag">
-              <textarea name="adres" rows="3" class="form-control"></textarea>
+              <textarea name="hizmet" rows="3" class="form-control"></textarea>
         </div>
     </div>
     

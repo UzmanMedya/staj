@@ -7,22 +7,26 @@ class IsYeri
 	private $il;
 	private $ilce;
 	private $adres;
-	private $kullaniciadi;
+	private $mail;
 	private $sifre;
-	function IsYeri ($kullaniciadi,$sifre)
+	private $hizmet;
+	
+	function IsYeri ($mail,$sifre)
 	{
-		$this -> kullaniciadi=$kullaniciadi;
+		$this -> mail=$mail;
 		$this -> sifre=$sifre;
-		$this -> id = 61;
-		
 	}
-	function getKullaniciadi() 
-	{
-        return $this->kullaniciadi;
-    }
+	function setId($id)
+	{  
+		$this -> id = $id; 
+	}
 	function getId() 
 	{
         return $this->id;
+    }
+	function getMail() 
+	{
+        return $this->mail;
     }
 	function setAd($ad)
 	{  
@@ -56,6 +60,14 @@ class IsYeri
 	{
       return  $this -> adres .' '. $this -> ilce.' / '.$this -> il ;
     }
+	function setHizmet ($hizmet)
+	{
+		$this->hizmet = $hizmet;
+	}
+	function getHizmet ($hizmet)
+	{
+		return $this->hizmet;
+	}
 	
 	function Kaydet(){
 	
