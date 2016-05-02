@@ -8,15 +8,13 @@
 
 <body>
 <div id="mesaj">
+
 <div id="mesajright" >
 	<ul>
-	
 		<li id="gizle">
 			<img class="mesajimg"src="indir2.jpg"  />
-		
 			<span>Sil</span>
 		</li>
-		<br>
 		<li onclick="yenimesajlarim('yenimesajlarim')">
 			<img class="mesajimg" src="indir.jpg" />
 			<span  >Yeni Mesaj</span>
@@ -30,9 +28,9 @@
 			<span>Giden Kutusu</span>
 		</li>
 	</ul>
-
 </div>
- <div id="mesajleft"  >
+ 
+<div id="mesajleft"  >
 	<div class="mesaj-icerik">
 		<div class="isaret">	
 		<input type="checkbox" class="checkbox" />
@@ -108,8 +106,7 @@
 	</div>
 	
 	
-	
-<div class="mesaj-icerik">
+	<div class="mesaj-icerik">
 		<div class="isaret">	
 		<input type="checkbox" class="checkbox" />
 		
@@ -122,64 +119,71 @@
 
 		</div>
 	</div>
-	</div>
+</div>
 
 <div id="mesajlarim" style="visibility: hidden">
 <div id="yenimesajlarim" style="visibility: hidden">
 <form action="" method=post>
- 
-<table border="0" width=400><tr>
-
-<tr><td><strong>Alýcý:</td><td> 
-<input type="text" id="textid"> 
-
-</select><br><input type="file" name="dosya" id="dosya">
-<tr><td><strong>Ýleti Konusu:</td><td><input type="text" name="soyadi"></td></tr></strong></br>
- 
-
- </table>
- <table><tr style="">
-<th>&nbsp&nbsp&nbsp&nbspMesaj:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br></th><td>
- 
-<textarea name="mesaj" cols="100%" rows="10" id="textarea">
- 
-</textarea><br><br>
- 
-<input type="submit" value="Gönder"><input type="reset" value="Temizle">
-
-
-
-</td>
-</tr>
- </table>
+	<table border="0" width=400><tr>
+		<tr>
+			<td>
+				<strong>Alýcý:
+			</td>
+			<td> 
+				<input type="text" id="textid">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<strong>Ýleti Konusu:</strong>
+			</td>
+			<td>
+				<input type="text" name="soyadi">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<strong>Mesaj:</strong>
+			</td>
+			<td>
+				<textarea name="mesaj" cols="100%" rows="10" id="textarea"></textarea>
+		</tr>
+		<tr>
+			<td>
+			</td>
+			<td>
+				<input type="submit" value="Gönder">
+				<input type="reset" value="Temizle">
+			</td>
+		</tr>
+	</table>
 </form>
 </div>
- <div id="gelenmesaj" >
-
- <table>
-<tr><td><strong>Ýleti Konusu:</td><td><input type="text" name="soyadi"></td></tr></strong></br>
- <tr>
-<th>&nbsp&nbsp&nbsp&nbspMesaj:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br></th><td>
- 
-<textarea name="mesaj" cols="100%" rows="20%">
- 
-</textarea><br><br>
- 
-
-
-
-
- 
-
-</td>
-</tr>
- </table>
-
+<div id="gelenmesaj" >
+	<table>
+		<tr>
+			<td>
+				<strong>Ýleti Konusu:</strong>
+			</td>
+			<td>
+				<input type="text" name="soyadi">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<strong>Mesaj:</strong>
+			</td>
+			<td>
+				<textarea name="mesaj" cols="100%" rows="20%"></textarea>
+			</td>
+		</tr>
+	</table>
 </div>
 
 
  </div>
 </div>
+
 <script>
 function mesajlarimmm(i) {
     document.getElementById(i).style.visibility='visible';
