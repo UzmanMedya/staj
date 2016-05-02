@@ -92,6 +92,28 @@
 	
 	function kayitOlIsYeri($isyeri){
 		 //veritabı
+		 
+		global $conn;
+		$query1 ="INSERT INTO tbl_kullanici('mail', 'parola', 'rol', 'onay')
+		VALUES ('".$isyeri->getMail()."','".$isyeri->getParola()."','".$isyeri->getRol()."','0')";
+		$sonuc1=mysqli_query($conn,$query1);
+		if($sonuc1){
+			$id_gelen = mysqli_insert_id($conn);
+			echo "eklendi";
+			
+			$query2 ="INSERT INTO tbl_isyeri('adi', 'il', 'ilce', 'adres', 'aciklama', 'user_id')
+			VALUES ('".$isyeri->getAd()."','".$isyeri->getIl()."','".$isyeri->getIlce()."','".$isyeri->getAdres()."','".$isyeri->getHizmet()."',,'".$id_gelen."')";
+			$sonuc2=mysqli_query($conn,$query2)
+			if($sonuc2){
+				echo "eklendi";
+			}
+			else{
+				echo "hata!";
+			}
+		}
+		else{
+			echo "hata!";
+		}
 	}
 		
 	function il_listele()
