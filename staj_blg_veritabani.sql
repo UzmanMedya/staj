@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 04 May 2016, 13:21:28
+-- Üretim Zamanı: 04 May 2016, 13:55:09
 -- Sunucu sürümü: 5.6.21
 -- PHP Sürümü: 5.6.3
 
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `tbl_akademisyen` (
 --
 
 INSERT INTO `tbl_akademisyen` (`id`, `ad`, `soyad`, `tc`, `unvan`, `user_id`) VALUES
-(1, 'Ali', 'Görür', '10844771122', 'Araştırma Görevlisi', 1),
+(1, 'Ali', 'Görür', '10844771122', 'Araştırma Görevlisi', 2),
 (2, 'Remzi', 'Çildoğan', '34727952868', 'Ordinaryus Profesör Doktor', 4);
 
 -- --------------------------------------------------------
@@ -1275,7 +1275,7 @@ CREATE TABLE IF NOT EXISTS `tbl_isyeri` (
 --
 
 INSERT INTO `tbl_isyeri` (`id`, `adi`, `il`, `ilce`, `adres`, `aciklama`, `user_id`, `foto`) VALUES
-(1, 'Ktü Teknoloji Merkezi', 61, 824, 'Trabzon/Merkez/Teknopart', 'Yazılım Geliştirme Teknoloji Merkezi ', 2, ''),
+(1, 'Ktü Teknoloji Merkezi', 61, 824, 'Trabzon/Merkez/Teknopart', 'Yazılım Geliştirme Teknoloji Merkezi ', 6, ''),
 (2, 'Tiskender Yazılım', 1, 1, 'Adana/Seyhan', 'Mobil Programlama', 5, '');
 
 -- --------------------------------------------------------
@@ -1306,23 +1306,26 @@ INSERT INTO `tbl_isyeri_teknoloji` (`id`, `isyeri_id`, `teknoloji_id`) VALUES
 
 CREATE TABLE IF NOT EXISTS `tbl_kullanici` (
 `id` int(11) NOT NULL,
+  `adi` varchar(50) NOT NULL,
+  `soyadi` varchar(50) NOT NULL,
   `mail` varchar(250) NOT NULL,
   `parola` varchar(50) NOT NULL,
   `rol` int(11) NOT NULL,
   `onay` int(11) NOT NULL,
   `foto` varchar(500) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin5;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin5;
 
 --
 -- Tablo döküm verisi `tbl_kullanici`
 --
 
-INSERT INTO `tbl_kullanici` (`id`, `mail`, `parola`, `rol`, `onay`, `foto`) VALUES
-(1, 'mehmet@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 1, 1, 'profil/user.png'),
-(2, 'aliveli@gmail.com', '5eb0da3f9b149d9063915a9613b08574', 3, 1, 'profil/user.png'),
-(3, 'tolgaiskendr@gmail.com', 'c8837b23ff8aaa8a2dde915473ce0991', 1, 1, 'profil/user.png'),
-(4, 'remzic@hotmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 2, 1, 'profil/user.png'),
-(5, 'ygt@hotmail.com', 'ba9a4ef31477dab241685003a454a9b8', 3, 1, 'profil/user.png');
+INSERT INTO `tbl_kullanici` (`id`, `adi`, `soyadi`, `mail`, `parola`, `rol`, `onay`, `foto`) VALUES
+(1, 'Polat', 'Alemdar', 'mehmet@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 1, 1, 'profil/user.png'),
+(2, 'Ali', 'Görür', 'aliveli@gmail.com', '5eb0da3f9b149d9063915a9613b08574', 2, 1, 'profil/user.png'),
+(3, 'Tolga', 'İskender', 'tolgaiskendr@gmail.com', 'c8837b23ff8aaa8a2dde915473ce0991', 1, 1, 'profil/user.png'),
+(4, 'Remzi', 'Çildoğan', 'remzic@hotmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 2, 1, 'profil/user.png'),
+(5, 'Tiskender Yazılım', '', 'ygt@hotmail.com', 'ba9a4ef31477dab241685003a454a9b8', 3, 1, 'profil/user.png'),
+(6, 'Ktü Teknoloji Merkezi', '', 'ktü@gmail.com', '7f31c778d8785a05d2de7f3e22c9468a', 3, 1, 'profil/user.png');
 
 -- --------------------------------------------------------
 
@@ -1695,7 +1698,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- Tablo için AUTO_INCREMENT değeri `tbl_kullanici`
 --
 ALTER TABLE `tbl_kullanici`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- Tablo için AUTO_INCREMENT değeri `tbl_kullanici_bildirim`
 --
