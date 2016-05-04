@@ -23,8 +23,9 @@ if(@$_POST["kaydol"])
 		$ogrenci->setDogumTarihi(@$_POST["dogumtarihi"]);
 		$ogrenci->setIl(@$_POST["sehir"]);
 		$ogrenci->setIlce(@$_POST["ilce"]);
-		$ogrenci->setKalanAdres(@$_POST["adres"]);
+		$ogrenci->setAdres(@$_POST["adres"]);
 		
+		printf("mmmmmmaaaaaaaaail".$ogrenci->getMail());
 		kayitOlOgrenci($ogrenci);
 		
 	}else if($yetki==2)//akademisyen

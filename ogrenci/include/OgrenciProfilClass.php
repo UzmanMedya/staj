@@ -19,6 +19,8 @@ class Ogrenci
 	private $il;
 	private $ilce;
 	private $parola;
+	private $k_adres;
+	
 	
 	function Ogrenci ()
 	{
@@ -50,7 +52,7 @@ class Ogrenci
 	}
 	function getOkulNu() 
 	{
-        $this->okulNu;
+      return  $this->okulNu;
     }
 	function setFotoraf($fotoraf)
 	{  
@@ -58,7 +60,7 @@ class Ogrenci
 	}
 	function getFotoraf() 
 	{
-        $this->fotoraf;
+      return  $this->fotoraf;
     }
 	function setTelNu($telNu)
 	{  
@@ -66,15 +68,15 @@ class Ogrenci
 	}
 	function getTelNu() 
 	{
-        $this->telNu;
+       return $this->telNu;
     }
 	function setCinsiyet($cinsiyet)
 	{  
-		$this -> telNu = $cinsiyet; 
+		$this -> cinsiyet = $cinsiyet; 
 	}
 	function getCinsiyet() 
 	{
-        $this->cinsiyet;
+      return  $this->cinsiyet;
     }
 	function setKalanAdres($kalanAdres)
 	{  
@@ -82,7 +84,7 @@ class Ogrenci
 	}
 	function getKalanAdres() 
 	{
-        $this->kalanAdres;
+      return  $this->kalanAdres;
     }
 	function setTcKimNo($tcKimNo)
 	{  
@@ -90,7 +92,7 @@ class Ogrenci
 	}
 	function getTcKimNo() 
 	{
-        $this->tcKimNo;
+      return  $this->tcKimNo;
     }
 	function setDogumTarihi($dogumTarihi)
 	{  
@@ -98,7 +100,7 @@ class Ogrenci
 	}
 	function getDogumTarihi() 
 	{
-        $this->dogumTarihi;
+       return $this->dogumTarihi;
     }
 	function setMail($mail)
 	{  
@@ -106,7 +108,7 @@ class Ogrenci
 	}
 	function getMail() 
 	{
-        $this->mail;
+        return $this->mail;
     }
 	function setFakulte($fakulte)
 	{  
@@ -114,7 +116,7 @@ class Ogrenci
 	}
 	function getFakulte() 
 	{
-        $this->fakulte;
+       return $this->fakulte;
     }	
 	function setUniversite($universite)
 	{  
@@ -122,7 +124,7 @@ class Ogrenci
 	}
 	function getUniversite() 
 	{
-        $this->universite;
+       return $this->universite;
     }
 	function setSinif($sinif)
 	{  
@@ -130,7 +132,7 @@ class Ogrenci
 	}
 	function getSinif() 
 	{
-        $this->sinif;
+      return  $this->sinif;
     }
 	function setIlce($ilce)
 	{  
@@ -138,7 +140,7 @@ class Ogrenci
 	}
 	function getIlce() 
 	{
-        $this->ilce;
+       return $this->ilce;
     }
 	function setIl($il)
 	{  
@@ -146,7 +148,7 @@ class Ogrenci
 	}
 	function getIl() 
 	{
-        $this->il;
+      return  $this->il;
     }
 	function setParola($parola)
 	{  
@@ -154,9 +156,17 @@ class Ogrenci
 	}
 	function getParola() 
 	{
-        $this->parola;
+      return  $this->parola;
     }
 	
+	function setAdres($adres)
+	{  
+		$this -> k_adres = $adres; 
+	}
+	function getAdres() 
+	{
+      return  $this->k_adres;
+    }
 	
 }
 
