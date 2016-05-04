@@ -39,6 +39,7 @@
 	}
 	function girisYap($mail,$sifre)
 	{
+		
 		$mail=temizle($mail);
 		$sifre=MD5($sifre);
 		global $conn;
@@ -52,6 +53,7 @@
 			$rol=$array["rol"];
 			$mail=$array["mail"];
 			$id=$array["id"];
+			
 			if($rol=="1")
 			{
 				$query ="select * from  tbl_ogrenci where login_id='$id' ";
@@ -59,24 +61,35 @@
 				$array=mysqli_fetch_array($sonuc);
 			
 				$_SESSION["staj"]=new Session($array["user_id"],$array["adi"],$array["soyadi"],$array["mail"],"öğrenci");
+				session_start();
+				
 				printf( $_SESSION["staj"]);
+				header("Location: ogrenci/index.php");
 			}
 			if($rol=="2")
 			{
 				$query ="select * from  tbl_akademisyen where user_id='$id' ";
 				$sonuc =mysqli_query($conn,$query);
+				$sayi=mysqli_num_rows($sonuc);
+				
 				$array=mysqli_fetch_array($sonuc);
 				
-				$_SESSION["staj"]=new Session($array["user_id"],$array["ad"],$array["soyad"],$rol,$mail);
+				$nesne=new Session($array["user_id"],$array["ad"],$array["soyad"],$rol,$mail);
+				$_SESSION["staj"]=$nesne;
+				
+				session_start();
 				header("Location: akademisyen/index.php");
 			}
 			if($rol=="3")
 			{
 				$query ="select * from  tbl_isyeri where user_id='$id' ";
 				$sonuc =mysqli_query($conn,$query);
+				
 				$array=mysqli_fetch_array($sonuc);
-			
+			    
 				$_SESSION["staj"]=new Session($array["user_id"],$array["adi"],$array["adi"],$array["aciklama"],"isyeri");
+				session_start();
+				header("Location: isyeri/index.php");
 					printf( $_SESSION["staj"]);
 			}
 		}

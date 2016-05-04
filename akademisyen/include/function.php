@@ -35,5 +35,7 @@
 		}
 	}
 
+	session_start();
+	echo $_SESSION["staj"]->getAdi();
 
 ?>
