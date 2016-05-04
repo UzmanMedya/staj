@@ -1,7 +1,8 @@
 <?php
 	
 	require_once("include/config.php");
- 
+	session_start();
+
 	function sayfa_getir()
 	{
 		$sayfa_adi=@$_GET["sayfa"];
@@ -44,57 +45,66 @@
 		$sifre=MD5($sifre);
 		global $conn;
 		$query ="select * from tbl_kullanici where mail='$mail' and parola='$sifre' and onay=1";
-		
 		$sonuc =mysqli_query($conn,$query);
-		$sayi=@mysqli_num_rows($sonuc);
-		if($sayi>0)
+		if(@mysqli_num_rows($sonuc) ==1)
 		{
-			$array=mysqli_fetch_array($sonuc);
-			$rol=$array["rol"];
-			$mail=$array["mail"];
-			$id=$array["id"];
-			
+			$row=mysqli_fetch_array($sonuc);
+			$rol=$row["rol"];
+			$mail=$row["mail"];
+			$id=$row["id"];
+			$row_u;
+			$adi ;
+			$soyadi;
 			if($rol=="1")
 			{
-				$query ="select * from  tbl_ogrenci where login_id='$id' ";
-				$sonuc =mysqli_query($conn,$query);
-				$array=mysqli_fetch_array($sonuc);
+				$row_u =KullaniciSorgu($id,"tbl_ogrenci");
+				$adi =$row_u["adi"];
+				$soyadi =$row_u["soyadi"];
+					
+			}
+			else if($rol=="2")
+			{
+				$row_u =KullaniciSorgu($id,"tbl_akademisyen");
+				$adi =$row_u["ad"];
+				$soyadi =$row_u["soyad"];
+			}
+			else if($rol=="3")
+			{
+				$row_u =KullaniciSorgu($id,"tbl_isyeri");
+				$adi =$row_u["adi"];
+				$soyadi ="";
+			}
 			
-				$_SESSION["staj"]=new Session($array["user_id"],$array["adi"],$array["soyadi"],$array["mail"],"öğrenci");
-				session_start();
-				
-				printf( $_SESSION["staj"]);
-				header("Location: ogrenci/index.php");
-			}
-			if($rol=="2")
+			if(!is_null($row_u))
 			{
-				$query ="select * from  tbl_akademisyen where user_id='$id' ";
-				$sonuc =mysqli_query($conn,$query);
-				$sayi=mysqli_num_rows($sonuc);
-				
-				$array=mysqli_fetch_array($sonuc);
-				
-				$nesne=new Session($array["user_id"],$array["ad"],$array["soyad"],$rol,$mail);
-				$_SESSION["staj"]=$nesne;
-				
-				session_start();
-				header("Location: akademisyen/index.php");
-			}
-			if($rol=="3")
+				$user=new Session($id,$adi,$soyadi,$mail,$rol); //array("ID"=>$id,"Adi"=>$adi,"Soyadi"=>$soyadi,"Mail"=>$mail,"Rol"=>$rol);
+				$_SESSION["staj"] =$user;
+				if($rol == "1")
+				{
+					header("Location: ogrenci/index.php");
+				}else if($rol == "2")
+				{
+					header("Location: akademisyen/index.php");
+				}else if($rol == "3")
+				{
+					header("Location: isyeri/index.php");
+				}
+			}else
 			{
-				$query ="select * from  tbl_isyeri where user_id='$id' ";
-				$sonuc =mysqli_query($conn,$query);
-				
-				$array=mysqli_fetch_array($sonuc);
-			    
-				$_SESSION["staj"]=new Session($array["user_id"],$array["adi"],$array["adi"],$array["aciklama"],"isyeri");
-				session_start();
-				header("Location: isyeri/index.php");
-					printf( $_SESSION["staj"]);
+				return "Bi hata oluştu tekrar deneyin.";
 			}
+		}else {
+			return "Kullanıcı kayıtlıdeğil veya Onaylanmamış";
 		}
 	}
 
+	function KullaniciSorgu($id,$tbl)
+	{
+		global $conn;
+		$query ="select * from  $tbl where user_id=$id";
+		$sonuc =mysqli_query($conn,$query);
+		return mysqli_fetch_array($sonuc);
+	}
 		
 	function kullanici_ekle($mail,$parola,$rol)
 	{
@@ -117,9 +127,9 @@
 		$id= kullanici_ekle($ogrenci->getMail(),$ogrenci->getParola(),1);
 
 		if($id !=-1)
-		{
-			$query ="INSERT INTO tbl_ogrenci(adi, soyadi, cinsiyet, d_tarihi, il, ilce,adres,okul_no,user_id)
-			VALUES ('".$ogrenci->getAd()."','".$ogrenci->getSoyad()."',".$ogrenci->getCinsiyet().",'".$ogrenci->getDogumTarihi()."',".$ogrenci->getIl().",".$ogrenci->getIlce().",'".$ogrenci->getAdres()."','".$ogrenci->getOkulNu()."',$id)";
+		{//Okul no veri alanı db de yok
+			$query ="INSERT INTO tbl_ogrenci(adi, soyadi, cinsiyet, d_tarihi, il, ilce,adres,user_id)
+			VALUES ('".$ogrenci->getAd()."','".$ogrenci->getSoyad()."',".$ogrenci->getCinsiyet().",'".$ogrenci->getDogumTarihi()."',".$ogrenci->getIl().",".$ogrenci->getIlce().",'".$ogrenci->getAdres()."',$id)";
 			echo $query;
 			$sonuc=mysqli_query($conn,$query);
 			if($sonuc){

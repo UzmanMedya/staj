@@ -1,6 +1,8 @@
 <?php
 	
 	require_once("../include/config.php");
+	require_once("../session.php");
+	session_start();
 
 	function sayfa_getir()
 	{
@@ -23,6 +25,15 @@
 		}
 	}
 	
+	function session_kontrol()
+	{
+		// session atanmamş sa login.php ye yönlendir
+		
+		if(!isset($_SESSION["staj"]) || $_SESSION["staj"]->getYetki() != 1){
+
+			header("Location: ../index.php?sayfa=giris");
+		}
+	}
 	
 
 

@@ -20,7 +20,10 @@
 </head>
 <body>
 	<div id="header">
-		<?php include_once("/include/mainHeader.php");?>
+		<?php 
+		include_once("/include/function.php");
+		session_kontrol();
+		include_once("/include/mainHeader.php");?>
 	</div>
 	<div id="main">
 		<div id="left"><?php include_once("/include/solMenuContent.php");?></div>

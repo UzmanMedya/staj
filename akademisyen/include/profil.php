@@ -4,7 +4,7 @@
 		</div>
         <div class="satir">
 			<div class="sol">Adı</div>
-        	<div class="sag"><input type="text" name="adi" ></div>
+        	<div class="sag"><input type="text" name="adi" value=<?php echo "'".$_SESSION['staj']->getAdi()."'";?> ></div>
 		</div>
         <div class="satir">
 			<div class="sol">Soyadi</div>

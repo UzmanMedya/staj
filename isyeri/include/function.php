@@ -1,6 +1,8 @@
 <?php
 	
 	require_once("../include/config.php");
+	require_once("../session.php");
+	session_start();
 
 	function sayfa_getir()
 	{
@@ -26,11 +28,18 @@
 	function temizle($text)
 	{
 		$text =htmlspecialchars($text);
-		//...di�er temizleme i�lemleri
+		//...diðer temizleme iþlemleri
 		return $text;
 	}
 
-	
+	function session_kontrol()
+	{
+		// session atanmamş sa login.php ye yönlendir
+		if(!isset($_SESSION["staj"]) || $_SESSION["staj"]->getYetki() != 3){
+
+			header("Location: ../index.php?sayfa=giris");
+		}
+	}
 	
 
 ?>

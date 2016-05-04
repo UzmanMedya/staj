@@ -1,5 +1,7 @@
 <?php
 	require_once("../include/config.php");
+	require_once("../session.php");
+	session_start();
 	
 	function AkademisyenGuncelle($akademisyen)
 	{
@@ -35,7 +37,13 @@
 		}
 	}
 
-	session_start();
-	echo $_SESSION["staj"]->getAdi();
+	function session_kontrol()
+	{
+		// session atanmamş sa login.php ye yönlendir
+		if(!isset($_SESSION["staj"]) || $_SESSION["staj"]->getYetki() != 2){
+
+			header("Location: ../index.php?sayfa=giris");
+		}
+	}
 
 ?>

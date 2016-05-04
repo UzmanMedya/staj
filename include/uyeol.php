@@ -25,7 +25,6 @@ if(@$_POST["kaydol"])
 		$ogrenci->setIlce(@$_POST["ilce"]);
 		$ogrenci->setAdres(@$_POST["adres"]);
 		
-		printf("mmmmmmaaaaaaaaail".$ogrenci->getMail());
 		kayitOlOgrenci($ogrenci);
 		
 	}else if($yetki==2)//akademisyen
