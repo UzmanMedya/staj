@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 04 May 2016, 12:59:57
+-- Üretim Zamanı: 04 May 2016, 13:21:28
 -- Sunucu sürümü: 5.6.21
 -- PHP Sürümü: 5.6.3
 
@@ -1379,7 +1379,6 @@ CREATE TABLE IF NOT EXISTS `tbl_ogrenci` (
   `soyadi` varchar(50) NOT NULL,
   `cinsiyet` int(11) NOT NULL,
   `d_tarihi` varchar(25) NOT NULL,
-  `foto` varchar(150) NOT NULL,
   `il` int(11) NOT NULL,
   `ilce` int(11) NOT NULL,
   `adres` text NOT NULL,
@@ -1395,9 +1394,9 @@ CREATE TABLE IF NOT EXISTS `tbl_ogrenci` (
 -- Tablo döküm verisi `tbl_ogrenci`
 --
 
-INSERT INTO `tbl_ogrenci` (`id`, `adi`, `soyadi`, `cinsiyet`, `d_tarihi`, `foto`, `il`, `ilce`, `adres`, `uni`, `fakulte`, `bolum`, `sinif`, `user_id`, `okul_no`) VALUES
-(1, 'Tolga', 'İskender', 1, '17-09-1994', 'dolka.png', 61, 816, 'Sakarya/Serdivan', 1, 1, 1, 3, 3, '305422'),
-(2, 'Polat', 'Alemdar', 1, '26-11-1982', 'olumsuz.png', 1, 1, 'Adana/Seyhan/Ölümsüz Sokak', 2, 2, 2, 3, 1, '305050');
+INSERT INTO `tbl_ogrenci` (`id`, `adi`, `soyadi`, `cinsiyet`, `d_tarihi`, `il`, `ilce`, `adres`, `uni`, `fakulte`, `bolum`, `sinif`, `user_id`, `okul_no`) VALUES
+(1, 'Tolga', 'İskender', 1, '17-09-1994', 61, 816, 'Sakarya/Serdivan', 1, 1, 1, 3, 3, '305422'),
+(2, 'Polat', 'Alemdar', 1, '26-11-1982', 1, 1, 'Adana/Seyhan/Ölümsüz Sokak', 2, 2, 2, 3, 1, '305050');
 
 -- --------------------------------------------------------
 
