@@ -81,28 +81,74 @@
 			}
 		}
 	}
+
 		
+	function kullanici_ekle($mail,$parola,$rol)
+	{
+		global $conn;
+		$query ="INSERT INTO tbl_kullanici(mail, parola, rol, onay)
+		VALUES ('".$mail."','".$parola."',$rol,0)";
+		$sonuc=mysqli_query($conn,$query);
+		if($sonuc)
+		{
+			
+			return mysqli_insert_id($conn);
+		}
+		else{
+			
+			return -1;
+		}
+	}
 	function kayitOlOgrenci($ogrenci){
-		 //veritabı
+		 global $conn;
+		$id= kullanici_ekle($ogrenci->getMail(),$ogrenci->getParola(),1);
+
+		if($id !=-1)
+		{
+			$query ="INSERT INTO tbl_ogrenci(adi, soyadi, cinsiyet, d_tarihi, il, ilce,adres,okul_no,user_id)
+			VALUES ('".$ogrenci->getAd()."','".$ogrenci->getSoyad()."',".$ogrenci->getCinsiyet().",'".$ogrenci->getDogumTarihi()."',".$ogrenci->getIl().",".$ogrenci->getIlce().",'".$ogrenci->getAdres()."','".$ogrenci->getOkulNu()."',$id)";
+			echo $query;
+			$sonuc=mysqli_query($conn,$query);
+			if($sonuc){
+				echo "eklendi";
+			}
+			else{
+				echo "hata!";
+			}
+			
+		}
 	}
 	function kayitOlAkademisyen($akademisyen){
-
-	 //veritabı
+		 global $conn;
+		$id= kullanici_ekle($akademisyen->getMail(),$akademisyen->getParola(),2);
+		if($id !=-1)
+		{
+			$query ="INSERT INTO tbl_akademisyen(ad, soyad, tc, unvan, user_id)
+			VALUES ('".$akademisyen->getAdi()."','".$akademisyen->getSoyadi()."','".$akademisyen->getTc()."','".$akademisyen->getUnvan()."',$id)";
+			echo $query;
+			$sonuc=mysqli_query($conn,$query);
+			if($sonuc){
+				echo "eklendi";
+			}
+			else{
+				echo "hata!";
+			}
+			
+		}
 	}
 	
 	function kayitOlIsYeri($isyeri){
 		 //veritabı
 		 
-		global $conn;
-		$query1 ="INSERT INTO tbl_kullanici('mail', 'parola', 'rol', 'onay')
-		VALUES ('".$isyeri->getMail()."','".$isyeri->getParola()."','".$isyeri->getRol()."','0')";
-		$sonuc1=mysqli_query($conn,$query1);
+		$sonuc1=kullanici_ekle($isyeri);
+		
 		if($sonuc1){
+			echo "kjnjk";
 			$id_gelen = mysqli_insert_id($conn);
 			echo "eklendi";
 			
 			$query2 ="INSERT INTO tbl_isyeri('adi', 'il', 'ilce', 'adres', 'aciklama', 'user_id')
-			VALUES ('".$isyeri->getAd()."','".$isyeri->getIl()."','".$isyeri->getIlce()."','".$isyeri->getAdres()."','".$isyeri->getHizmet()."',,'".$id_gelen."')";
+			VALUES ('".$isyeri->getAd()."','".$isyeri->getIl()."','".$isyeri->getIlce()."','".$isyeri->getAdres()."','".$isyeri->getHizmet()."',,'".$sonuc1["id"]."')";
 			$sonuc2=mysqli_query($conn,$query2);
 			if($sonuc2){
 				echo "eklendi";
