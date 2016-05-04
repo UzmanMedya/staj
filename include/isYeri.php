@@ -57,9 +57,10 @@ class IsYeri
 	function getMail(){
         return $this->mail;
     }
-	function setMail(mail){
-		$this -> mail=$mail;
+	function setMail ($mail){
+		$this->mail=$mail;
 	}
+	
 	function getParola(){
 		return $this->parola;
 	}
