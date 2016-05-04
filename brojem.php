@@ -53,79 +53,35 @@
 	</div>
 		
 
-	<div class="mesaj-icerik">
-		<div class="isaret">	
-		<input type="checkbox" class="checkbox" />
-		
-		<div class="mesajiicerik" onclick="mesajlarimmm('mesajlarim')">
-		
-			<img src="qw.jpg"/>	
-			<span>Yazilim Muh.</span><span class="mesaj-tarih">16.05.2016 </span>
-					<div class="mesaj-konu"id="msjkonu"></div>
-		</div>
+	<?php
+	global $conn;
 
-		</div>
-	</div>
-	
-	
-	<div class="mesaj-icerik">
-		<div class="isaret">	
-		<input type="checkbox" class="checkbox" />
-		
-		<div class="mesajiicerik" onclick="mesajlarimmm('mesajlarim')">
-		
-			<img src="qw.jpg"/>	
-			<span>Yazilim Muh.</span><span class="mesaj-tarih">16.05.2016 </span>
-					<div class="mesaj-konu"id="msjkonu"></div>
-		</div>
+	$sorgu = "SELECT `foto`,`tarih` FROM `tbl_mesaj` LEFT JOIN `tbl_kullanici` ON tbl_mesaj.alici_id = tbl_kullanici.id WHERE `gonderen_id`='".$_SESSION['uyeId']."'";
+	$sonuc=mysqli_query($conn,$sorgu);
 
-		</div>
-	</div>
-	
-	
+	if($sonuc){
+		while($sutun=mysqli_fetch_row($sonuc)){
+			
+		
+	echo '
 	<div class="mesaj-icerik">
-		<div class="isaret">	
-		<input type="checkbox" class="checkbox" />
-		
-		<div class="mesajiicerik" onclick="mesajlarimmm('mesajlarim')">
-		
-			<img src="qw.jpg"/>	
-			<span>Yazilim Muh.</span><span class="mesaj-tarih">16.05.2016 </span>
+			<div class="isaret">	
+				<input type="checkbox" class="checkbox" />
+				
+				<div class="mesajiicerik" onclick="mesajlarimmm(\'mesajlarim\')">
+				
+					<img src="'.$sutun[0].'"/>	
+					<span>Yazilim Muh.</span><span class="mesaj-tarih">'.$sutun[1].'</span>
 					<div class="mesaj-konu"id="msjkonu"></div>
-		</div>
+				</div>
 
-		</div>
-	</div>
+			</div>
+	</div>';
 	
-	
-	<div class="mesaj-icerik">
-		<div class="isaret">	
-		<input type="checkbox" class="checkbox" />
-		
-		<div class="mesajiicerik" onclick="mesajlarimmm('mesajlarim')">
-		
-			<img src="qw.jpg"/>	
-			<span>Yazilim Muh.</span><span class="mesaj-tarih">16.05.2016 </span>
-					<div class="mesaj-konu"id="msjkonu"></div>
-		</div>
+		}
+	}	
+	?>
 
-		</div>
-	</div>
-	
-	
-	<div class="mesaj-icerik">
-		<div class="isaret">	
-		<input type="checkbox" class="checkbox" />
-		
-		<div class="mesajiicerik" onclick="mesajlarimmm('mesajlarim')">
-		
-			<img src="qw.jpg"/>	
-			<span>Yazilim Muh.</span><span class="mesaj-tarih">16.05.2016 </span>
-					<div class="mesaj-konu"id="msjkonu"></div>
-		</div>
-
-		</div>
-	</div>
 </div>
 
 <div id="mesajlarim" style="visibility: hidden">
@@ -203,7 +159,17 @@ $sonuc=mysqli_query($conn,$sorgu);
 
 if($sonuc){
 	while($sutun=mysqli_fetch_row($sonuc)){
-		echo $sutun[1]."<br/>";
+		echo $sutun[0] ."<br/>". $sutun[1] ."<br/>". $sutun[2] ."<br/>". $sutun[3] ."<br/>". $sutun[4] ."<br/>";
+		echo "---------------.<br/>";
+	}
+}
+
+$sorgu1 = "SELECT `foto` FROM `tbl_mesaj` LEFT JOIN `tbl_kullanici` ON tbl_mesaj.alici_id = tbl_kullanici.id WHERE `gonderen_id`='".$_SESSION['uyeId']."'";
+$sonuc=mysqli_query($conn,$sorgu1);
+if($sonuc){
+	while($sutun=mysqli_fetch_row($sonuc)){
+		echo "<img src=".$sutun[0]." />" ."<br/>";
+		echo "---------------.<br/>";
 	}
 }
 
