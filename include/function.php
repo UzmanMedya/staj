@@ -160,7 +160,7 @@
 			echo $query;
 			$sonuc=mysqli_query($conn,$query);
 			if($sonuc){
-				echo "eklendi"
+				echo "eklendi";
 			}
 			else{
 				echo "hata!";
