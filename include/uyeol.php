@@ -45,9 +45,21 @@ if(@$_POST["kaydol"])
 		
 		
 		kayitOlAkademisyen($akademisyen);
-	}else//işveren
+	}else if($yetki==3)//işveren
 	{
+		require_once("isyeri/include/isYeri.php");
 		
+		$isyeri=new IsYeri();
+		
+		$isyeri->setAd(@$_POST["adi"]);
+		$isyeri->setIl(@$_POST["sehir"]);
+		$isyeri->setIlce(@$_POST["ilce"]);
+		$isyeri->setAdres(@$_POST["adres"]);
+		$isyeri->setHizmet(@$_POST["hizmet"]);
+		$isyeri->setMail(@$_POST["mail"]);
+		$isyeri->setParola(MD5(@$_POST["parola"]));
+		
+		kayitOlIsYeri($isyeri);
 	}
 }
 	?>

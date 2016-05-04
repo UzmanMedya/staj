@@ -151,27 +151,20 @@
 	}
 	
 	function kayitOlIsYeri($isyeri){
-		 //veritabı
-		 
-		$sonuc1=kullanici_ekle($isyeri);
-		
-		if($sonuc1){
-			echo "kjnjk";
-			$id_gelen = mysqli_insert_id($conn);
-			echo "eklendi";
-			
-			$query2 ="INSERT INTO tbl_isyeri('adi', 'il', 'ilce', 'adres', 'aciklama', 'user_id')
-			VALUES ('".$isyeri->getAd()."','".$isyeri->getIl()."','".$isyeri->getIlce()."','".$isyeri->getAdres()."','".$isyeri->getHizmet()."',,'".$sonuc1["id"]."')";
-			$sonuc2=mysqli_query($conn,$query2);
-			if($sonuc2){
-				echo "eklendi";
+		global $conn;
+		$id=kullanici_ekle($isyeri->getMail(),$isyeri->getParola(),3);
+		if($id!=-1)
+		{
+			$query="INSERT INTO tbl_isyeri(adi, il, ilce, adres, aciklama, user_id)
+			VALUES ('".$isyeri->getAd()."','".$isyeri->getIl()."','".$isyeri->getIlce()."','".$isyeri->getAdres()."','".$isyeri->getHizmet()."',$id)";
+			echo $query;
+			$sonuc=mysqli_query($conn,$query);
+			if($sonuc){
+				echo "eklendi"
 			}
 			else{
 				echo "hata!";
 			}
-		}
-		else{
-			echo "hata!";
 		}
 	}
 		

@@ -7,66 +7,64 @@ class IsYeri
 	private $il;
 	private $ilce;
 	private $adres;
-	private $mail;
-	private $sifre;
 	private $hizmet;
+	private $mail;
+	private $parola;
 	
-	function IsYeri ($mail,$sifre)
-	{
-		$this -> mail=$mail;
-		$this -> sifre=$sifre;
-	}
-	function setId($id)
-	{  
-		$this -> id = $id; 
-	}
-	function getId() 
-	{
+
+	function getId(){
         return $this->id;
     }
-	function getMail() 
-	{
-        return $this->mail;
-    }
-	function setAd($ad)
-	{  
-		$this -> ad = $ad; 
+	function setId($id){  
+		$this -> id = $id; 
 	}
-	function getAd() 
-	{
-        return $this->ad;
+	
+	function getAd(){
+        return $this->adi;
     }
-	function setIl($il)
-	{  
+	function setAd($adi){  
+		$this -> adi = $adi; 
+	}
+	
+	function getIl(){
+        return $this->il;
+    }
+	function setIl($il){  
 		$this -> il = $il; 
 	}
-	function getIl() 
-	{
-        return $this->il;;
+	
+	function getIlce(){
+        return $this->ilce;
     }
-	function setIlce($ilce)
-	{  
+	function setIlce($ilce){  
 		$this -> ilce = $ilce; 
 	}
-	function getIlce() 
-	{
-        return $this->ilce;;
-    }
-	function setAdres($adres)
-	{  
-		$this -> adres = $adres; 
-	}
-	function getAdres() 
-	{
+	
+	function getAdres(){
       return  $this -> adres .' '. $this -> ilce.' / '.$this -> il ;
     }
-	function setHizmet ($hizmet)
-	{
+	function setAdres($adres){  
+		$this -> adres = $adres; 
+	}
+	
+	function getHizmet (){
+		return $this->hizmet;
+	}
+	function setHizmet ($hizmet){
 		$this->hizmet = $hizmet;
 	}
-	function getHizmet ($hizmet)
-	{
-		return $this->hizmet;
+	
+	function getMail(){
+        return $this->mail;
+    }
+	function setMail(mail){
+		$this -> mail=$mail;
+	}
+	function getParola(){
+		return $this->parola;
+	}
+	function setParola($parola){
+		$this->parola=$parola;
 	}
 	
 	function Kaydet(){
