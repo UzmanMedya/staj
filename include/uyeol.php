@@ -14,7 +14,7 @@ if(@$_POST["kaydol"])
 		
 		
 		$ogrenci->setMail(@$_POST["mail"]);
-		$ogrenci->setParola(@$_POST["parola"]);
+		$ogrenci->setParola(MD5(@$_POST["parola"]));
 		$ogrenci->setAd(@$_POST["adi"]);
 		$ogrenci->setSoyad(@$_POST["soyadi"]);
 		$ogrenci->setOkulNu(@$_POST["okulno"]);
@@ -41,7 +41,7 @@ if(@$_POST["kaydol"])
 		$akademisyen->setTc(@$_POST["tcno"]);
 		$akademisyen->setUnvan(@$_POST["unvan"]);
 		$akademisyen->setMail(@$_POST["mail"]);		
-		$akademisyen->setParola(@$_POST["parola"]);
+		$akademisyen->setParola(MD5(@$_POST["parola"]));
 		
 		
 		kayitOlAkademisyen($akademisyen);
