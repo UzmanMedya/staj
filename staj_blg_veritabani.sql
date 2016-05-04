@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 02 May 2016, 14:58:11
+-- Üretim Zamanı: 04 May 2016, 12:43:46
 -- Sunucu sürümü: 5.6.21
 -- PHP Sürümü: 5.6.3
 
@@ -1309,19 +1309,20 @@ CREATE TABLE IF NOT EXISTS `tbl_kullanici` (
   `mail` varchar(250) NOT NULL,
   `parola` varchar(50) NOT NULL,
   `rol` int(11) NOT NULL,
-  `onay` int(11) NOT NULL
+  `onay` int(11) NOT NULL,
+  `foto` varchar(500) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin5;
 
 --
 -- Tablo döküm verisi `tbl_kullanici`
 --
 
-INSERT INTO `tbl_kullanici` (`id`, `mail`, `parola`, `rol`, `onay`) VALUES
-(1, 'mehmet@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 1, 1),
-(2, 'aliveli@gmail.com', '5eb0da3f9b149d9063915a9613b08574', 3, 1),
-(3, 'tolgaiskendr@gmail.com', 'c8837b23ff8aaa8a2dde915473ce0991', 1, 1),
-(4, 'remzic@hotmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 2, 1),
-(5, 'ygt@hotmail.com', 'ba9a4ef31477dab241685003a454a9b8', 3, 1);
+INSERT INTO `tbl_kullanici` (`id`, `mail`, `parola`, `rol`, `onay`, `foto`) VALUES
+(1, 'mehmet@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 1, 1, 'img\\facebook.png'),
+(2, 'aliveli@gmail.com', '5eb0da3f9b149d9063915a9613b08574', 3, 1, 'img\\facebook.png'),
+(3, 'tolgaiskendr@gmail.com', 'c8837b23ff8aaa8a2dde915473ce0991', 1, 1, 'img\\facebook.png'),
+(4, 'remzic@hotmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 2, 1, 'img\\facebook.png'),
+(5, 'ygt@hotmail.com', 'ba9a4ef31477dab241685003a454a9b8', 3, 1, 'img\\facebook.png');
 
 -- --------------------------------------------------------
 
