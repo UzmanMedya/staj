@@ -3,10 +3,10 @@
 	require_once("../session.php");
 	session_start();
 	
-	function AkademisyenGuncelle($akademisyen)
+	function sosyalHesaplarGuncelle($adi,$soyad,$hesap)
 	{
 		global $conn;
-		$query ="";
+		$query ="update ";
 		$result =mysql_query($query,$conn);
 		if ($result) {
 			//kaydedildi.
@@ -15,6 +15,9 @@
 			//Kaydedilemedi
 		}
 	}
+
+
+
 	function sayfa_getir()
 	{
 		$sayfa_adi=@$_GET["sayfa"];
@@ -47,5 +50,7 @@
 			header("Location: ../index.php?sayfa=giris");
 		}
 	}
+
+
 
 ?>
