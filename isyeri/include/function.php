@@ -28,7 +28,7 @@
 	{
 		// session atanmamş sa login.php ye yönlendir
 		
-		if(!isset($_SESSION["staj"]) || $_SESSION["staj"]->getYetki() != 1){
+		if(!isset($_SESSION["staj"]) || $_SESSION["staj"]->getYetki() != 3){
 
 			header("Location: ../index.php?sayfa=giris");
 		}
