@@ -1,3 +1,4 @@
+
 <div id="headerAnaDiv">
 	<div id="headerLeft">
 		<div id="headerLogo">
@@ -6,6 +7,18 @@
 		</div>
 		<label id="adi" style="float:left; margin-left:10px; width:200px;"> <?php	 echo $_SESSION["staj"]->getAdi(); ?><?php 	 echo $_SESSION["staj"]->getSoyadi(); ?></label> 
 	</div>
+	
+	<div id="aramabolumu">
+	     <input  type ="text" id="arama" name="arama_text"> </input>
+		 <div class="karama_sonuc">
+		 <div class="arama_sonuc"  onclick="location.href='mainHeader.php'" style="cursor:pointer">
+			<span  >Sonuc</span>
+		 </div>
+		 </div>
+	</div>
+	
+	
+	
 	<div id="headerRight">
 		
 		<a href="cikis.php">
