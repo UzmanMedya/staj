@@ -1,6 +1,6 @@
 ﻿ 
 
-<link rel="stylesheet" type="text/css" href="../css/hakkinda.css">
+
 <div id="proje_hakkinda">
 <form name="form1" method="post" action="">
 <label id="proje_hakkinda_baslik">
