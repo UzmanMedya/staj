@@ -174,7 +174,26 @@
 		}
 		
 	}
+		
+	function hakkinda_ekle($hakkinda){
+		global $conn;
+		$tarih=date('Ymd');
+		$query="INSERT INTO tbl_hakkimizda(baslik, icerik, tarih)
+		VALUES ('".$hakkinda->getBaslik()."','".$hakkinda->getIcerik()."',$tarih.)";
+			echo $query;
+			$sonuc=mysqli_query($conn,$query);
+			if($sonuc){
+				echo "eklendi";
+			}
+			else{
+				echo "hata!";
+			}
+		}
 	
+	
+	function hakinda_goster(){
+		
+	}
 
 
 	
