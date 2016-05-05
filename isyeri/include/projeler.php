@@ -1,4 +1,4 @@
-﻿
+﻿ 
 
 <link rel="stylesheet" type="text/css" href="../css/hakkinda.css">
 <div id="proje_hakkinda">
