@@ -127,6 +127,7 @@ $oturum="açık"; //Buraya sessionun açık oldgunu eklenecek
 	
 	
 
+
 <link rel="stylesheet" type="text/css" href="../css/projeler.css">
 <!--
 <div id="proje-content">
