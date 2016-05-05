@@ -43,7 +43,7 @@ $oturum="açık"; //Buraya sessionun açık oldgunu eklenecek
 		$proje=new Proje();
 			
 			$proje-> setId(@$_POST["projeID"]);
-			$proje->setLoginId(6);
+			$proje->setLoginId(@$_SESSION["staj"]->getId());
 			 projeSil($proje);		
 	}
 	
@@ -51,7 +51,7 @@ $oturum="açık"; //Buraya sessionun açık oldgunu eklenecek
 		require_once("include/projeClass.php");
 		$proje=new Proje();
 			
-			$proje->setLoginId(6);
+			$proje->setLoginId(@$_SESSION["staj"]->getId());
 			 projeListele($proje);
 	}
 	
@@ -66,7 +66,7 @@ $oturum="açık"; //Buraya sessionun açık oldgunu eklenecek
 
 			$proje=new Proje();
 				
-			$proje->setLoginId(6); //oturumdan login adi verilecek
+			$proje->setLoginId(@$_SESSION["staj"]->getId()); //oturumdan login adi verilecek
 			$proje->setProjeAdi(@$_POST["isimi"]);
 			$proje->setProjeIcerik(@$_POST["icerik"]);
 			$proje->setTarih(@$_POST["tarih"]);
@@ -102,7 +102,7 @@ $oturum="açık"; //Buraya sessionun açık oldgunu eklenecek
 		$proje=new Proje();
 		
 			$proje->setId(@$_POST["ID"]); 
-			$proje->setLoginId(6); //oturumdan login adi verilecek
+			$proje->setLoginId(@$_SESSION["staj"]->getId()); //oturumdan login adi verilecek
 			$proje->setProjeAdi(@$_POST["isimi"]);
 			$proje->setProjeIcerik(@$_POST["icerik"]);
 			$proje->setTarih(@$_POST["tarih"]);
