@@ -1,8 +1,9 @@
 <?php
-	define("host","localhost");
-	define("user","root");
-	define("pass","");
-	define("db","staj_blg_veritabani");
+	define("host","85.95.227.156");
+	define("user","sosyalstaj");
+	define("pass","Egitim123");
+	define("db","egitim");
+
 
 	$conn = mysqli_connect(host,user,pass,db) or die("Veri tabanı bağlanti hatası");
 	

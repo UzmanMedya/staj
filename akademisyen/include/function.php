@@ -30,9 +30,11 @@
 		else if($sayfa_adi=="iletisim"){
 			include_once("include/sosyalHesaplar.php");
 		}
+		else if($sayfa_adi=="akademisyen"){
+			include_once("include/sosyalHesaplar.php");
+		}
 		else
 		{
-			
 		  include_once("include/profil.php");
 		}
 	}

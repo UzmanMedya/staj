@@ -38,6 +38,7 @@
 			//Kaydedilemedi
 		}
 	}
+	
 	function girisYap($mail,$sifre)
 	{
 		
