@@ -3,6 +3,7 @@
 		<div id="headerLogo">
 			<img src="../profil/user.png">
 		</div>
+		<label id="adi" style="float:left; margin-left:10px; width:200px;"> <?php	 echo $_SESSION["staj"]->getAdi(); ?><?php 	 echo $_SESSION["staj"]->getSoyadi(); ?></label> 
 	</div>
 	<div id="headerRight">
 		

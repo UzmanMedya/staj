@@ -3,6 +3,7 @@
 		<div id="headerLogo">
 				<a href="index.php"/>
 				<img  title="jgyjgy" src="img/logo.png" style=" height: 120px; width:120px;">
+				
 		</div>
 		<div id="headerSlogan">
 		İŞ YERİ EĞİTİMİ SİSTEMİ
