@@ -44,6 +44,15 @@
     border-radius: 4px;
     box-sizing: border-box;
 }
+.proje-button{
+    height:50%;
+    padding: 8px 15px;
+    margin: 8px 0;
+   float:right;
+    border: 0px solid #ccc;
+    border-radius: 1px;
+    box-sizing: border-box;
+}
 
 .inputText{
     width: 100%;
@@ -68,4 +77,34 @@
 
 .buttonSosyalHesapKaydet:hover {
     background-color: #45a049;
+}
+
+
+.buttonSil {
+    width: 100%;
+	height:100%;
+    background-color: #DE1313;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.buttonSil:hover {
+    background-color: #EC0303;
+}
+
+
+.buttonDuzenle {
+ width: 100%;
+	height:100%; 
+	background-color: yellow;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.buttonDuzenle:hover {
+    background-color: yellow;
 }
