@@ -38,7 +38,7 @@ function projeEkle($proje)
 	{
 		 global $conn;
 		
-		$sorgu=mysqli_query($conn," SELECT * FROM tbl_isyeri  WHERE  user_id=".$proje->getLoginId()."");
+		$sorgu=mysqli_query($conn," SELECT * FROM tbl_ogrenci  WHERE  user_id=".$proje->getLoginId()."");
 		$say=mysqli_num_rows($sorgu);
        // echo "say".$say;
         if($say>0) 
@@ -50,7 +50,7 @@ function projeEkle($proje)
 			{
 				echo "
                 <script>  alert('Başalı Bir Şekilde Proje Eklendi...');
-				window.location='index.php?sayfa=projeler';
+								window.location='index.php?sayfa=projeler';
 		        </script> ";
 			}
 			else{
@@ -68,7 +68,7 @@ function projeEkle($proje)
 	{
 		 global $conn;
 		
-		$sorgu=mysqli_query($conn," SELECT * FROM tbl_isyeri  WHERE  user_id=".$proje->getLoginId()."");
+		$sorgu=mysqli_query($conn," SELECT * FROM tbl_ogrenci  WHERE  user_id=".$proje->getLoginId()."");
 		$say=mysqli_num_rows($sorgu);
        // echo "say".$say;
         if($say>0) 
@@ -94,7 +94,7 @@ function projeEkle($proje)
 	{
 		 global $conn;
 		
-		$sorgu=mysqli_query($conn," SELECT * FROM tbl_isyeri  WHERE  user_id=".$proje->getLoginId()."");
+		$sorgu=mysqli_query($conn," SELECT * FROM tbl_ogrenci  WHERE  user_id=".$proje->getLoginId()."");
 		$say=mysqli_num_rows($sorgu);
        // echo "say".$say;
         if($say>0) 
@@ -142,7 +142,7 @@ function projeEkle($proje)
 	{
 		 global $conn;
 		
-		$sorgu=mysqli_query($conn," SELECT * FROM tbl_isyeri  WHERE  user_id=".$proje->getLoginId()."");
+		$sorgu=mysqli_query($conn," SELECT * FROM tbl_proje  WHERE  user_id=".$proje->getLoginId()."");
 		$say=mysqli_num_rows($sorgu);
        // echo "say".$say;
         if($say>0) 

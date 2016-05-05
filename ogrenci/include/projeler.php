@@ -47,7 +47,7 @@ $oturum="açık"; //Buraya sessionun açık oldgunu eklenecek
 			 projeSil($proje);		
 	}
 	
-	if($oturum=="açık"){
+	if(@$_SESSION["staj"]){
 		require_once("include/projeClass.php");
 		$proje=new Proje();
 			
@@ -58,7 +58,7 @@ $oturum="açık"; //Buraya sessionun açık oldgunu eklenecek
 	
 	if(@$_POST["ekle"])
 	{
-		if($oturum=="açık"){
+		if(@$_SESSION["staj"]){
 			if(@$_POST["icerik"]!=""&&@$_POST["isimi"]!=""&&@$_POST["tarih"]!=""){
 				echo "asd";
 		
@@ -71,7 +71,7 @@ $oturum="açık"; //Buraya sessionun açık oldgunu eklenecek
 			$proje->setProjeIcerik(@$_POST["icerik"]);
 			$proje->setTarih(@$_POST["tarih"]);
 			
-			//echo "Proje =".$proje->getLoginId()."adi ".$proje->getProjeAdi()." icerik ".$proje->getProjeIcerik()." tarih ".$proje->getTarih();
+			echo "Proje =".$proje->getLoginId()."adi ".$proje->getProjeAdi()." icerik ".$proje->getProjeIcerik()." tarih ".$proje->getTarih();
 			projeEkle($proje);
 			}
 			else{

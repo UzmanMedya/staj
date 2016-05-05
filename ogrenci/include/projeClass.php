@@ -7,15 +7,7 @@ class Proje {
    private $id_user;
    
    
-   function Proje ($id,$p_adi,$p_icerik,$tarih,$id_user)
-	{
-		$this -> id=$id;
-		$this -> p_adi=$p_adi;
-		$this -> p_icerik=$p_icerik;
-		$this -> tarih=$tarih;
-		$this -> id_user=$id_user;
-		
-	}
+   
 	function getId() 
 	{
         return $this->id;
@@ -26,7 +18,7 @@ class Proje {
 	}
 	function getLoginId() 
 	{
-        return $id_user->id_user;
+        return $this->id_user;
     }
 	function setLoginId($id_user)
 	{  
@@ -42,7 +34,7 @@ class Proje {
 	}
 	function getProjeIcerik() 
 	{
-        $this->p_icerik;
+       return $this->p_icerik;
     }
 	function setProjeIcerik($p_icerik)
 	{  
@@ -50,7 +42,7 @@ class Proje {
 	}
 	function getTarih() 
 	{
-        $this->tarih;
+       return $this->tarih;
     }
 	function setTarih($tarih)
 	{  
