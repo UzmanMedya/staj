@@ -1,0 +1,155 @@
+#proje_hakkinda{
+	width:100%;
+}
+#proje_hakkinda_baslik{
+	width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#proje_hakkinda_onsoz{
+width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#proje_hakkinda_icerik{
+	font-size:14px;
+}
+#proje_hakkinda_textarea{
+	font-size:12px;
+	width:100%;
+	height:250px;
+}
+#proje_hakkinda_duzenle{
+	  width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#proje_hakkinda_duzenle:hover {
+    background-color: #45a049;
+}
+
+
+
+
+#proje-baslik{
+	 width: 100%; 
+    padding: 7px 15px;
+    margin: 4px 0;
+	font-size:18px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#proje-content{
+	 width: 100%;
+  display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#proje-icerik{
+	padding: 12px 20px;
+	margin-left:10px;
+    margin: 8px 0;
+	width:100%;
+	display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#proje-ekleyen{
+
+    padding: 8px 15px;
+    margin: 8px 0;
+  float:right;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#proje-tarih{
+ 
+    padding: 8px 15px;
+    margin: 8px 0;
+   float:right;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.proje-button{
+    height:50%;
+    padding: 8px 15px;
+    margin: 8px 0;
+   float:right;
+    border: 0px solid #ccc;
+    border-radius: 1px;
+    box-sizing: border-box;
+}
+
+.inputText{
+    width: 100%;
+    padding: 8px 15px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.buttonSosyalHesapKaydet {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.buttonSosyalHesapKaydet:hover {
+    background-color: #45a049;
+}
+
+
+.buttonSil {
+    width: 100%;
+	height:100%;
+    background-color: #DE1313;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.buttonSil:hover {
+    background-color: #CC0303;
+}
+
+
+.buttonDuzenle {
+ width: 100%;
+	height:100%; 
+	background-color: #EAA812;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.buttonDuzenle:hover {
+    background-color: #EA8A12;
+}
