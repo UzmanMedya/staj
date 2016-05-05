@@ -1,3 +1,10 @@
+<?php
+	$sonuc="";
+	if(@$_POST["kaydet"])
+	{
+		$sonuc=sosyalHesaplarKayder();
+	}
+?>
 <div id="govde">
 <form action="" method="post" name="form1">
 	<div class="satir">
@@ -29,8 +36,17 @@
 	</div>
 	
 	<div class="satir">
-		<input type="submit" value="KAYDET" name="kaydet" class="btn btn-success btn-block" />
+		<div class="sol">Tel:</div>
+		<div class="sag">
+			<input type="text" name="tel" class="form-control" />
+		</div>
 	</div>
 
+	<div class="satir">
+		<input type="submit" value="KAYDET" name="kaydet" class="btn btn-success btn-block" />
+	</div>
+	<div class="satir">
+		<label><?php echo $sonuc;?></label>
+	</div>
 </form>
 </div>

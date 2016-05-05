@@ -1,18 +1,28 @@
 <?php
 	require_once("../include/config.php");
 	require_once("../session.php");
+	
 	session_start();
 	
-	function sosyalHesaplarGuncelle($adi,$soyad,$hesap)
+	function sosyalHesaplarKayder()
 	{
 		global $conn;
-		$query ="update ";
-		$result =mysql_query($query,$conn);
+		$facebook =temizle($_POST["facebook"]);
+		$gmail =temizle($_POST["gmail"]);
+		$github =temizle($_POST["github"]);
+		$website =temizle($_POST["websitesi"]);
+		$tel =temizle($_POST["tel"]);
+		$user_id =$_SESSION["staj"]->getID();
+		
+		
+		$query ="INSERT INTO tbl_iletisim(facebook,gmail,github,web_site,tel,user_id) 
+						VALUES ('$facebook','$gmail','$github','$website','$tel',$user_id)";
+		$result =mysqli_query($conn,$query);
 		if ($result) {
-			//kaydedildi.
+			return "Bilgiler Kaydedildi";
 		}else
 		{
-			//Kaydedilemedi
+			return "Bi Hata Oluştu Bilgiler Kaydedildi";
 		}
 	}
 
@@ -51,6 +61,11 @@
 		}
 	}
 
-
+	function temizle($text)
+	{
+		$text =htmlspecialchars($text);
+		//...diğer temizleme işlemleri
+		return $text;
+	}
 
 ?>
