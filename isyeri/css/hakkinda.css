@@ -11,7 +11,7 @@
     box-sizing: border-box;
 }
 #proje_hakkinda_onsoz{
-width: 100%;
+	width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -28,7 +28,7 @@ width: 100%;
 	height:250px;
 }
 #proje_hakkinda_duzenle{
-	  width: 100%;
+	width: 100%;
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
@@ -54,7 +54,7 @@ width: 100%;
     box-sizing: border-box;
 }
 #isyeri_hakkinda_onsoz{
-width: 100%;
+	width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -71,7 +71,7 @@ width: 100%;
 	height:250px;
 }
 #isyeri_hakkinda_duzenle{
-	  width: 100%;
+	width: 100%;
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
