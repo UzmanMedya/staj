@@ -8,12 +8,16 @@
 		data:{rol:rol},
 		datatype:"html", 
 		beforeSend : function(){ $("#secilenRol").html("Yükleniyor.."); },
-		success :function(cevap){ $("#secilenRol").html(cevap);},
+		success :function(cevap){ $("#secilenRol").html(cevap);dom();},
 		error: function(){ alert("hata oluştu "); }
 	});
 });
 
-$("#il-sec").change(function(){
+
+
+var dom =function()
+{
+	$("#il-sec").change(function(){
 		$.ajax({
 		type:"POST", 
 		url:"process.php?islem=ilce_listele",
@@ -23,4 +27,8 @@ $("#il-sec").change(function(){
 		success :function(cevap){ $("#ilce-sec").html(cevap);},
 		error: function(){ alert("hata oluştu "); }
 	});
+	});
+}
+$(function(){
+	dom();
 });
