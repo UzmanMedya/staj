@@ -6,7 +6,7 @@
 	    $sonuc=mysqli_query($conn,$sorgu);
 		 if($sonuc)
 		 {
-			while($sutun=mysqli_fetch_row($sonuc))
+			while($sutun=mysqli_fetch_array($sonuc))
 			{
 				if($sutun["rol"]==1)
 					$rol="ogrenciGor";
