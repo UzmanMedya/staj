@@ -13,28 +13,32 @@
 		</ul>
 	</div>
 	<div class="secici">1/8</div>
+	
+
 	<div class="islem">
 		<div class="duyurular">
-				DUYURULAR<br/>
-				<ul>
-					<li><a href="#">AAAAAAAAAAAAAAAAAAA</a></li>
-					<li><a href="#">BBBBBBBBBBBBBBBBBBB</a></li>
-					<li><a href="#">CCCCCCCCCCCCCCCCCCC</a></li>
-					<li><a href="#">DDDDDDDDDDDDDDDDDDD</a></li>
-					<li><a href="#">EEEEEEEEEEEEEEEEEEE</a></li>
-					<li><a href="#">FFFFFFFFFFFFFFFFFFF</a></li>
-				</ul>
+		DUYURULAR<br/>
+			<?php
+				global $conn;
+				$sorgu="select*from tbl_duyuru";
+				$sonuc=mysqli_query($conn,$sorgu);
+				echo "<ul>";
+				while($sonuc2=mysqli_fetch_array($sonuc))
+					echo "<li><a href=#>".$sonuc2["baslik"]."</a></li><br />";
+				echo "</ul>";
+			?>
 		</div>
 		<div class="etkinlikler">
 			ETKİNLİKLER<br/>
-				<ul>
-					<li><a href="#">AAAAAAAAAAAAAAAAAAA</a></li>
-					<li><a href="#">BBBBBBBBBBBBBBBBBBB</a></li>
-					<li><a href="#">CCCCCCCCCCCCCCCCCCC</a></li>
-					<li><a href="#">DDDDDDDDDDDDDDDDDDD</a></li>
-					<li><a href="#">EEEEEEEEEEEEEEEEEEE</a></li>
-					<li><a href="#">FFFFFFFFFFFFFFFFFFF</a></li>
-				</ul>
+			<?php
+				global $conn;
+				$sorgu="select*from tbl_etkinlik";
+				$sonuc=mysqli_query($conn,$sorgu);
+				echo "<ul>";
+				while($sonuc2=mysqli_fetch_array($sonuc))
+					echo "<li><a href=#>".$sonuc2["baslik"]."</a></li><br />";
+				echo "</ul>";
+			?>
 		</div>
 	</div>
 </div>
