@@ -108,7 +108,7 @@ if(@$_POST["kaydol"])
         <?php include_once("ogrenciuyeol.php");?>
     </div>
     <div id="gonder">
-<input name="kaydol" type="submit" value="Kaydol" class="btn btn-success btn-block" />
+<input name="kaydol" id="kaydol" type="submit" value="Kaydol" class="btn btn-success btn-block" />
 </div>
 </div>
 </div>
@@ -123,11 +123,13 @@ if(@$_POST["kaydol"])
               var duzenli = new RegExp(/^[a-z]{1}[\d\w\.-]+@[\d\w-]{3,}\.[\w]{2,3}(\.\w{2})?$/);
               var mail = form1.mail.value;
               if (duzenli.test(mail)) {
+				  document.getElementById("kaydol").type = 'submit';
                   document.getElementById("cont").innerHTML = "<b>Mail geçerli</b>";
                   document.getElementById("cont").style.color = "Green";
                   document.getElementById("cont").style.fontsize = "16px";
               }
               else {
+				  document.getElementById("kaydol").type = 'button';
                   document.getElementById("cont").innerHTML = "<b>Mail geçersiz</b>";
                   document.getElementById("cont").style.color = "Red";
                   document.getElementById("cont").style.fontsize = "16px";
@@ -138,15 +140,18 @@ if(@$_POST["kaydol"])
               var duzenli = new RegExp(/^[a-z]{1}[\d\w\.-]+@[\d\w-]{3,}\.[\w]{2,3}(\.\w{2})?$/);
               var mail = form1.parola.value;
               if (duzenli.test(mail)) {
+				    document.getElementById("kaydol").type = 'submit';
                   document.getElementById("contParola").innerHTML = "mail geçerli";
               }
               var s = form1.parola.value.length;
               if (s <= 6) {
+				  document.getElementById("kaydol").type = 'button';
                   document.getElementById("contParola").style.color = "Red";
                   document.getElementById("contParola").style.fontsize = "16px";
                   document.getElementById("contParola").innerHTML = "<b>Şifre yetersiz</b>";
               }
               else {
+				  document.getElementById("kaydol").type = 'submit';
                   document.getElementById("contParola").style.color = "Green";
                   document.getElementById("contParola").style.fontsize = "16px";
                   document.getElementById("contParola").innerHTML = "<b>Şifre yeterli</b>";
@@ -157,10 +162,12 @@ if(@$_POST["kaydol"])
               var duzenli = new RegExp(/^[a-z]{1}[\d\w\.-]+@[\d\w-]{3,}\.[\w]{2,3}(\.\w{2})?$/);
               var mail = form1.parola2.value;
               if (duzenli.test(mail)) {
+				    document.getElementById("kaydol").type = 'submit';
                   document.getElementById("contParolaTekrar").innerHTML = "mail geçerli";
               }
               var s = form1.parola2.value.length;
               if (s <= 6) {
+				 // document.getElementById('kaydol').type = 'olumsuz';
                   document.getElementById("contParolaTekrar").style.color = "Red";
                   document.getElementById("contParolaTekrar").style.fontsize = "16px";
                   document.getElementById("contParolaTekrar").innerHTML = "<b>Şifre yetersiz</b>";
