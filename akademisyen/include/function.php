@@ -46,6 +46,15 @@
 		else if($sayfa_adi=="akademisyen"){
 			include_once("include/sosyalHesaplar.php");
 		}
+		else if($sayfa_adi=="akademisyenGor"){
+			include_once("include/akademisyenGor.php");
+		}
+		else if($sayfa_adi=="ogrenciGor"){
+			include_once("../ogrenci/include/ogrenciGor.php");
+		}
+		else if($sayfa_adi=="isyeriGor"){
+			include_once("../isyeri/include/isyeriGor.php");
+		}
 		else
 		{
 		  include_once("include/profil.php");

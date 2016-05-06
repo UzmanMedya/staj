@@ -1,0 +1,56 @@
+#akademisyenGor{
+	height:100%;
+	width:100%;
+	padding:15px;
+}
+#akademisyenGor label{
+	width: 100%;
+    padding: 8px 15px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#temizlemeDiv
+{
+	clear:both;
+}
+#fotoraf{
+	margin:7px;
+	float:left;
+}
+#adSoyad{
+	float:left;
+	margin-top:40px;
+}
+#bilgiler{
+	margin:7px;
+}
+
+#fotoraf img{
+	width: 150px;
+	height: 150px;
+}
+#akademisyenGor ul 
+{
+	list-style-type:none;
+	margin-bottom:5px;
+}
+#akademisyenGor ol 
+{
+	list-style-type:none;
+	margin:0px;
+	padding:0px;
+}
+#akademisyenGor li 
+{
+	list-style-type:none;
+	margin-bottom:4px;
+}
+#bilgiler img{
+	width:30px;
+	height:30px;
+	border-radius:50%;
+}
