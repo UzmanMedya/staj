@@ -199,56 +199,40 @@
 	function hakkinda_ekle($hakkinda){
 		global $conn;
 		$kontrol="SELECT*FROM tbl_hakkimizda where user_id= ".$_SESSION["staj"]->getId();
-		echo $kontrol;
 		$kont=mysqli_query($conn,$kontrol);
 		$num_rows = mysqli_num_rows($kont);
-		echo $num_rows;
 	
 		if($num_rows==0){
 			$tarih=date('Ymd');
-			$query="INSERT INTO tbl_hakkimizda(user_id,baslik, icerik, tarih)
-			VALUES ('".$_SESSION["staj"]->getId()."','".$hakkinda->getBaslik()."','".$hakkinda->getIcerik()."',$tarih.)";
+			$query="INSERT INTO tbl_hakkimizda(user_id, baslik, icerik, tarih)
+			VALUES ('".$_SESSION["staj"]->getId()."','".str_replace("'","\'",$hakkinda->getBaslik())."','".str_replace("'","\'",$hakkinda->getIcerik())."',$tarih.)";
 			echo $query;
 			$sonuc=mysqli_query($conn,$query);
-			if($sonuc){
-				echo "eklendi";
-			}
-			else{
-				echo "hata!";
-			}
 		}
 		else if($num_rows==1){
 			$tarih=date('Ymd');
-			$query="UPDATE tbl_hakkimizda SET baslik='".$hakkinda->getBaslik()."',icerik='".$hakkinda->getIcerik()."',tarih='".$tarih."' 
+			$query="UPDATE tbl_hakkimizda SET baslik='".str_replace("'","\'",$hakkinda->getBaslik())."',icerik='".str_replace("'","\'",$hakkinda->getIcerik())."',tarih='".$tarih."' 
 			WHERE user_id='".$_SESSION["staj"]->getId()."'";
-			echo $query;
 			$sonuc=mysqli_query($conn,$query);
-			if($sonuc){
-				echo "eklendi";
-			}
-			else{
-				echo "hata!";
-			}
 		}
-		
-/*	if()
-		
-		$tarih=date('Ymd');
-		$query="INSERT INTO tbl_hakkimizda(baslik, icerik, tarih)
-		VALUES ('".$hakkinda->getBaslik()."','".$hakkinda->getIcerik()."',$tarih.)";
-			echo $query;
-			$sonuc=mysqli_query($conn,$query);
-			if($sonuc){
-				echo "eklendi";
-			}
-			else{
-				echo "hata!";
-			}*/
-		}
+	}
 	
 	
-	function hakinda_goster(){
+	function hakkinda_goster(){
+		global $conn;
+		$query="SELECT user_id, baslik, icerik, tarih FROM tbl_hakkimizda WHERE user_id= ".$_SESSION["staj"]->getId();
+		$sorgu=mysqli_query($conn,$query);
 		
+		$sql=mysqli_fetch_array($sorgu);
+		
+		return $sql;
+	}
+	function hakkinda_user_goster(){
+		global $conn;
+		$query="SELECT mail FROM tbl_kullanici WHERE id= ".$_SESSION["staj"]->getId();
+		$sorgu=mysqli_query($conn,$query);
+		$sql=mysqli_fetch_array($sorgu);
+		return $sql;
 	}
 
 
