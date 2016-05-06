@@ -4,6 +4,7 @@
 <title></title>
 <meta charset="utf-8"/>
 <link rel="stylesheet" type="text/css" href="css/mainFooter.css">
+<link rel="stylesheet" type="text/css" href="css/ogrenciGor.css">
 <link rel="stylesheet" type="text/css" href="css/solMenuContent.css">
 <link rel="stylesheet" type="text/css" href="css/mainHeader.css">
 <link rel="stylesheet" type="text/css" href="css/mainStyle.css">
@@ -18,6 +19,32 @@
 <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css" />
 <script src="../bootstrap/js/bootstrap.min.js"></script>
+
+<script language="javascript" type="text/javascript">
+			$(function()
+			{
+				$(".arama_sonuc").hide();
+				$("input[name=arama_text]").keyup(function(){
+					var value=$(this).val();
+					var konu="value="+value;
+					if(value!="")
+					{
+						$.ajax({
+							type:"POST",
+							url:"include/ajax.php",
+							data:konu,
+							success:function(sonuc)
+							{
+								$(".arama_sonuc").show().html(sonuc);
+							}
+						});
+					}
+					else{
+						$(".arama_sonuc").hide();
+					}
+				});
+			});
+		</script>
 </head>
 <body>
 	<div id="header">
