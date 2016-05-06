@@ -18,6 +18,10 @@
 			<li>İLETİŞİM</li>
 				
 		</a>
+		<a href="index.php?sayfa=hakkinda">
+			<li>HAKKINDA</li>
+				
+		</a>
 
 	</ul>
 
