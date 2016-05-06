@@ -82,23 +82,25 @@ if(@$_POST["kaydol"])
 	<div class="satir">
     	<div class="sol">Mail:</div>
         <div class="sag">
-              <input type="email" name="mail" class="form-control">
+              <input type="email" onkeypress="kontro2()"  id="mail" name="mail" class="form-control">
+			  	<div id="cont"> </div>
         </div>
+	
     </div>
    <div class="satir">
     	<div class="sol">Parola:</div>
         <div class="sag">
             
-              <input type="password" name="parola" class="form-control">
-            
+              <input type="password" id="parola" name="parola"  onkeypress="kontrol()" class="form-control">
+            <div id="contParola"> </div>
         </div>
     </div>
      <div class="satir">
     	<div class="sol">Parola Tekrar:</div>
         <div class="sag">
            
-              <input type="password" name="parolatekrar" class="form-control">
-             
+              <input type="password" name="parolatekrar" id="parola2" onkeypress="kontrolParolaTekrar()" class="form-control">
+             <div id="contParolaTekrar"> </div>
         </div>
     </div>
 
@@ -113,7 +115,63 @@ if(@$_POST["kaydol"])
 <div class="clear">
 	
 </div>
+ 
 </form>
+
+ <script type="text/javascript" language="javascript">
+          function kontro2() {
+              var duzenli = new RegExp(/^[a-z]{1}[\d\w\.-]+@[\d\w-]{3,}\.[\w]{2,3}(\.\w{2})?$/);
+              var mail = form1.mail.value;
+              if (duzenli.test(mail)) {
+                  document.getElementById("cont").innerHTML = "<b>Mail geçerli</b>";
+                  document.getElementById("cont").style.color = "Green";
+                  document.getElementById("cont").style.fontsize = "16px";
+              }
+              else {
+                  document.getElementById("cont").innerHTML = "<b>Mail geçersiz</b>";
+                  document.getElementById("cont").style.color = "Red";
+                  document.getElementById("cont").style.fontsize = "16px";
+              }
+          }
+          function kontrol() {
+
+              var duzenli = new RegExp(/^[a-z]{1}[\d\w\.-]+@[\d\w-]{3,}\.[\w]{2,3}(\.\w{2})?$/);
+              var mail = form1.parola.value;
+              if (duzenli.test(mail)) {
+                  document.getElementById("contParola").innerHTML = "mail geçerli";
+              }
+              var s = form1.parola.value.length;
+              if (s <= 6) {
+                  document.getElementById("contParola").style.color = "Red";
+                  document.getElementById("contParola").style.fontsize = "16px";
+                  document.getElementById("contParola").innerHTML = "<b>Şifre yetersiz</b>";
+              }
+              else {
+                  document.getElementById("contParola").style.color = "Green";
+                  document.getElementById("contParola").style.fontsize = "16px";
+                  document.getElementById("contParola").innerHTML = "<b>Şifre yeterli</b>";
+              }
+          }
+		   function kontrolParolaTekrar() {
+
+              var duzenli = new RegExp(/^[a-z]{1}[\d\w\.-]+@[\d\w-]{3,}\.[\w]{2,3}(\.\w{2})?$/);
+              var mail = form1.parola2.value;
+              if (duzenli.test(mail)) {
+                  document.getElementById("contParolaTekrar").innerHTML = "mail geçerli";
+              }
+              var s = form1.parola2.value.length;
+              if (s <= 6) {
+                  document.getElementById("contParolaTekrar").style.color = "Red";
+                  document.getElementById("contParolaTekrar").style.fontsize = "16px";
+                  document.getElementById("contParolaTekrar").innerHTML = "<b>Şifre yetersiz</b>";
+              }
+              else {
+                  document.getElementById("contParolaTekrar").style.color = "Green";
+                  document.getElementById("contParolaTekrar").style.fontsize = "16px";
+                  document.getElementById("contParolaTekrar").innerHTML = "<b>Şifre yeterli</b>";
+              }
+          }
+    </script>
 
 
 
