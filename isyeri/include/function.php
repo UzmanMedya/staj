@@ -25,7 +25,28 @@
 		}
 	}
 
-	
+	function sosyalHesaplarKayder()
+	{
+		global $conn;
+		$facebook =temizle($_POST["facebook"]);
+		$gmail =temizle($_POST["gmail"]);
+		$github =temizle($_POST["github"]);
+		$website =temizle($_POST["websitesi"]);
+		$tel =temizle($_POST["tel"]);
+		$user_id =$_SESSION["staj"]->getID();
+		
+		
+		$query ="INSERT INTO tbl_iletisim(facebook,gmail,github,web_site,tel,user_id) 
+						VALUES ('$facebook','$gmail','$github','$website','$tel',$user_id)";
+		$result =mysqli_query($conn,$query);
+		if ($result) {
+			return "Bilgiler Kaydedildi";
+		}else
+		{
+			return "Bi Hata Oluştu Bilgiler Kaydedildi";
+		}
+	}
+		
 	function session_kontrol()
 	{
 		// session atanmamş sa login.php ye yönlendir
