@@ -129,8 +129,8 @@
 
 		if($id !=-1)
 		{//Okul no veri alanı db de yok
-			$query ="INSERT INTO tbl_ogrenci( cinsiyet, d_tarihi, il, ilce,adres,user_id)
-			VALUES (".$ogrenci->getCinsiyet().",'".$ogrenci->getDogumTarihi()."',".$ogrenci->getIl().",".$ogrenci->getIlce().",'".$ogrenci->getAdres()."',$id)";
+			$query ="INSERT INTO tbl_ogrenci(adi, soyadi, cinsiyet, d_tarihi, il, ilce,adres,user_id)
+			VALUES ('".$ogrenci->getAd()."','".$ogrenci->getSoyad()."',".$ogrenci->getCinsiyet().",'".$ogrenci->getDogumTarihi()."',".$ogrenci->getIl().",".$ogrenci->getIlce().",'".$ogrenci->getAdres()."',$id)";
 			echo $query;
 			$sonuc=mysqli_query($conn,$query);
 			if($sonuc){
@@ -147,8 +147,8 @@
 		$id= kullanici_ekle($akademisyen->getMail(),$akademisyen->getParola(),2);
 		if($id !=-1)
 		{
-			$query ="INSERT INTO tbl_akademisyen( tc, unvan, user_id)
-			VALUES ('".$akademisyen->getTc()."','".$akademisyen->getUnvan()."',$id)";
+			$query ="INSERT INTO tbl_akademisyen(ad, soyad, tc, unvan, user_id)
+			VALUES ('".$akademisyen->getAdi()."','".$akademisyen->getSoyadi()."','".$akademisyen->getTc()."','".$akademisyen->getUnvan()."',$id)";
 			echo $query;
 			$sonuc=mysqli_query($conn,$query);
 			if($sonuc){
@@ -166,8 +166,8 @@
 		$id=kullanici_ekle($isyeri->getMail(),$isyeri->getParola(),3);
 		if($id!=-1)
 		{
-			$query="INSERT INTO tbl_isyeri( il, ilce, adres, aciklama, user_id)
-			VALUES ('".$isyeri->getIl()."','".$isyeri->getIlce()."','".$isyeri->getAdres()."','".$isyeri->getHizmet()."',$id)";
+			$query="INSERT INTO tbl_isyeri(adi, il, ilce, adres, aciklama, user_id)
+			VALUES ('".$isyeri->getAd()."','".$isyeri->getIl()."','".$isyeri->getIlce()."','".$isyeri->getAdres()."','".$isyeri->getHizmet()."',$id)";
 			echo $query;
 			$sonuc=mysqli_query($conn,$query);
 			if($sonuc){
