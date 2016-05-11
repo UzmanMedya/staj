@@ -53,7 +53,7 @@
 		}else
 		{
 			 $query="UPDATE tbl_iletisim SET facebook='$facebook',gmail ='$gmail'
-			 		,github ='$github',web_site ='$website',tel ='$tel' WHERE $id";
+			 		,github ='$github',web_site ='$website',tel ='$tel' WHERE id=$id";
 		}
 		
 		
