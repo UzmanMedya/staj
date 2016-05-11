@@ -9,7 +9,7 @@
 #headerLeft {
 	float:left;
 	width:49%;
-	margin-top:10px;
+	margin-top:-10px;
 	margin-bottom:5px;
 	
 }
@@ -123,10 +123,10 @@
 
 #headerRight{
 	float:left;
-	width:30%;
-	margin-top:10px;
-	margin-left:60%;
-	margin-bottom:5px;
+	width:50%;
+	margin-top:1px;
+	margin-left:1%;
+	margin-bottom:2px;
 
 	
 }
@@ -136,7 +136,7 @@
 	width:30%;
 	margin-left:16.5%;
 	position:absolute;
-	margin-top:25px;
+	margin-top:1px;
 	
 }
 #arama
