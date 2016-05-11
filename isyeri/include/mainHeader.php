@@ -5,8 +5,7 @@
 			
 			
 		</div>
-		<label id="adi" style="float:left; margin-left:10px; width:200px;"> <?php	 echo $_SESSION["staj"]->getAdi(); ?><?php 	 echo $_SESSION["staj"]->getSoyadi(); ?></label> 
-	</div>
+		</div>
 	
 	
 	<div id="aramabolumu">

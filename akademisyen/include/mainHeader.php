@@ -4,8 +4,7 @@
 			<img src="../profil/user.png">
 			
 		</div>
-		<label id="adi" style="float:left; margin-left:10px; width:200px;"> <?php	 echo $_SESSION["staj"]->getAdi(); ?><?php 	 echo $_SESSION["staj"]->getSoyadi(); ?></label> 
-	</div>
+		</div>
 	
 	<div id="aramabolumu">
 	     <input  type ="text" id="arama" name="arama_text"> </input>
