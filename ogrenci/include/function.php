@@ -66,6 +66,13 @@
 		}
 	}
 
+	function temizle($text)
+	{
+		$text =htmlspecialchars($text);
+		//...diğer temizleme işlemleri
+		return $text;
+	}
+
 	function session_kontrol()
 	{
 		// session atanmamş sa login.php ye yönlendir
