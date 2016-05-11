@@ -141,6 +141,7 @@
 #arama
 {
 	width:100%;
+	border-radius:4px;
 }
 .arama_icerik {
     z-index: 999;

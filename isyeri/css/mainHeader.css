@@ -124,7 +124,7 @@
 #headerRight{
 	float:left;
 	width:50%;
-	margin-top:1px;
+	margin-top:-10px;
 	margin-left:1%;
 	margin-bottom:2px;
 
@@ -142,6 +142,7 @@
 #arama
 {
 	width:100%;
+	border-radius:4px;
 }
 .arama_icerik {
     z-index: 999;
