@@ -34,7 +34,7 @@
 		}
 	}
 	
-	function sosyalHesaplarKayder()
+	function sosyalHesaplarKaydet()
 	{
 		global $conn;
 		$facebook =temizle($_POST["facebook"]);
@@ -44,9 +44,19 @@
 		$tel =temizle($_POST["tel"]);
 		$user_id =$_SESSION["staj"]->getID();
 		
-		
-		$query ="INSERT INTO tbl_iletisim(facebook,gmail,github,web_site,tel,user_id) 
+		$id =temizle($_POST["id"]);
+		$query ="";
+		if($id == -1)
+		{
+			 $query="INSERT INTO tbl_iletisim(facebook,gmail,github,web_site,tel,user_id) 
 						VALUES ('$facebook','$gmail','$github','$website','$tel',$user_id)";
+		}else
+		{
+			 $query="UPDATE tbl_iletisim SET facebook='$facebook',gmail ='$gmail'
+			 		,github ='$github',web_site ='$website',tel ='$tel' WHERE $id";
+		}
+		
+		
 		$result =mysqli_query($conn,$query);
 		if ($result) {
 			return "Bilgiler Kaydedildi";
