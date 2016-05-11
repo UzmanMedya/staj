@@ -1,9 +1,9 @@
-<div id="headerAnaDiv">
+﻿<div id="headerAnaDiv">
 	<div id="headerLeft">
 		<div id="headerLogo">
-				<a href="index.php"/>
-				<img  title="jgyjgy" src="img/logo.png" style=" height: 120px; width:120px;">
-				
+				<a href="index.php">
+					<img  title="jgyjgy" src="img/logo.png" style=" height: 120px; width:120px;">
+				</a>
 		</div>
 		<div id="headerSlogan">
 		İŞ YERİ EĞİTİMİ SİSTEMİ
