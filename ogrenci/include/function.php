@@ -33,7 +33,12 @@
 		  include_once("profil.php");
 		}
 	}
-	
+	function temizle($text)
+	{
+		$text =htmlspecialchars($text);
+		//...diğer temizleme işlemleri
+		return $text;
+	}
 	function sosyalHesaplarKaydet()
 	{
 		global $conn;

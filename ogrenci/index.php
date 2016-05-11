@@ -12,7 +12,7 @@
 <link rel="stylesheet" type="text/css" href="css/projeler.css">
 <link rel="stylesheet" type="text/css" href="css/styleogr.css">
 <link rel="stylesheet" type="text/css" href="css/hakkinda.css">
-
+<link rel="stylesheet" type="text/css" href="css/profil.css">
 <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
 <script type="text/javascript" src="js/bildirim.js"></script>
 
