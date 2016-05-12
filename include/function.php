@@ -22,6 +22,11 @@
 			//echo "id= ".$id;
 			include_once("include/etkinlik_detay.php");
 		}
+		else if($sayfa_adi=="arama"){
+			$id=@$_GET["id"];
+			//echo "id= ".$id;
+			include_once("include/arama.php");
+		}
 		else
 		{
 			//slaydır çağırılacak

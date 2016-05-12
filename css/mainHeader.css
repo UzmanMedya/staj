@@ -15,7 +15,6 @@
 }
 .headerButon{
 	height:35px;
-	
 	min-width:180px;
 	margin-right:30px;
 	background-color:#15f;
@@ -32,6 +31,34 @@
     background-color: #4CAF50; /* Green */
     color: white;
 }
+
+.aramaButon{
+	height:35px;
+	
+	min-width:100px;
+	margin-right:5px;
+	background-color:#15f;
+	margin-top:30px;
+	line-height:35px;
+	border-radius: 8px;
+}
+
+.aramaButon {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.aramaButon:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+ a .aramaButon span{
+	color:#f2f2f2;
+	margin-left:35%;
+}
+
+
 #headerRight a
 {
 float:right;
