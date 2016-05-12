@@ -30,6 +30,10 @@
 			<li>HAKKINDA</li>
 				
 		</a>
+		<a href="index.php?sayfa=basvuru">
+			<li>BAŞVUR</li>
+				
+		</a>
 
 	</ul>
 

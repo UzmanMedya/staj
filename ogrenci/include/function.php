@@ -22,6 +22,9 @@
 		else if($sayfa_adi=="mesajlar"){
 			include_once("../brojem.php");
 		}
+		else if($sayfa_adi=="basvuru"){
+			include_once("include/basvuru.php");
+		}
 		else if($sayfa_adi=="akademisyenGor"){
 			include_once("../akademisyen/include/akademisyenGor.php");
 		}
