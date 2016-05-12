@@ -1,4 +1,4 @@
-﻿<div id="headerAnaDiv">
+<div id="headerAnaDiv">
 	<div id="headerLeft">
 		<div id="headerLogo">
 				<a href="index.php">
