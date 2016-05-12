@@ -33,7 +33,14 @@
 			include_once("include/slider.php");
 		}
 	}
-
+	function aramaYap($yetki,$ad,$soyad,$icerik)
+	{
+		echo "YETKİ".$yetki."<br/>";
+		echo "AD".$ad."<br/>";
+		echo "SOYAD".$soyad."<br/>";
+		echo "İCERİK".$icerik."<br/>";
+		echo"Bu Fonksiyonda Arama Kodları Yapzılacak";
+	}
 	function temizle($text)
 	{
 		$text =htmlspecialchars($text);

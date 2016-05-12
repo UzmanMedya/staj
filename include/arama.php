@@ -1,15 +1,20 @@
 <?php
 
-	if(@$_POST){
-		
-	$mail=@$_POST["kullaniciadi"];
-	$sifre=@$_POST["sifre"];
-	if($mail!="" && $sifre!=""){
-		
-		girisYap($mail,$sifre);
-		
-	}
+if(@$_POST["ara"])
+{
 	
+	$yetki=@$_POST["yetki"];
+	if($yetki==1)//ogrenci
+	{
+		aramaYap($yetki,@$_POST["adi"],@$_POST["soyadi"],@$_POST["icerik"]);
+	}
+	else if($yetki==2)//akademisyen
+	{
+		aramaYap($yetki,@$_POST["adi"],@$_POST["soyadi"],@$_POST["icerik"]);
+	}else if($yetki==3)//işveren
+	{
+		aramaYap($yetki,@$_POST["adi"],@$_POST["soyadi"],@$_POST["icerik"]);
+	}
 	
 }
 
@@ -32,21 +37,21 @@
    <div class="satir">
     	<div class="sol">Kullanıcı Adı:</div>
         <div class="sag">
-              <input type="text"  class="form-control">
+              <input type="text" name="adi"  class="form-control">
         </div>
     </div>
 	
 	 <div class="satir">
     	<div class="sol">Kullanıcı Soyadı:</div>
         <div class="sag">
-              <input type="text"  class="form-control">
+              <input type="text" name="soyadi" class="form-control">
         </div>
     </div>
 	
 	 <div class="satir">
     	<div class="sol">İçerik(Diller):</div>
         <div class="sag">
-              <input type="text"  class="form-control">
+              <input type="text" name="icerik" class="form-control">
         </div>
     </div>
 	
