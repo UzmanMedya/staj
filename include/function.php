@@ -12,6 +12,16 @@
 		else if($sayfa_adi=="giris"){
 			include_once("giris.php");
 		}
+		else if($sayfa_adi=="duyuru"){
+			$id=@$_GET["id"];
+			//echo "id= ".$id;
+			include_once("include/duyuru_detay.php");
+		}
+		else if($sayfa_adi=="etkinlik"){
+			$id=@$_GET["id"];
+			//echo "id= ".$id;
+			include_once("include/etkinlik_detay.php");
+		}
 		else
 		{
 			//slaydır çağırılacak
@@ -204,6 +214,20 @@
 				echo "<option value=".$row['id'].">".$row['ilce']."</option>";
 			}
 		}
+	}
+	function duyuru_getir($id){
+		global $conn;
+		$sorgu="select*from tbl_duyuru where id=".$id;
+		$sonuc=mysqli_query($conn,$sorgu);
+		$sql=mysqli_fetch_array($sonuc);
+		return $sql;
+	}
+	function etkinlik_getir($id){
+		global $conn;
+		$sorgu="select*from tbl_etkinlik where id=".$id;
+		$sonuc=mysqli_query($conn,$sorgu);
+		$sql=mysqli_fetch_array($sonuc);
+		return $sql;
 	}
 	
 
