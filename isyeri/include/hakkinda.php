@@ -18,7 +18,7 @@
 <form id="hakkinda" action="" method="post">
 <div id="isyeri_hakkinda">
 
-	<label id="isyeri_hakkinda_baslik">Önsöz :</label>
+	<label id="isyeri_hakkinda_baslik">Başlık :</label>
 	<input type="text" id="isyeri_hakkinda_onsoz" value="" name="baslik"></input> <br/>
 	<label id="isyeri_hakkinda_icerik">İçerik :</label>
 	<textarea id="isyeri_hakkinda_textarea" name="icerik"></textarea><br>
@@ -28,8 +28,10 @@
 </form>
 
 <div id="proje-content">
-<label id="proje-baslik"><?php echo $sonuc["baslik"]; ?></label><br/><br/>
-<label id="proje-icerik"><?php echo $sonuc["icerik"]; ?>
-</label><br>
-<label id="proje-ekleyen"><?php echo $user_id["mail"]; ?></label><label id="proje-ekleyen">Ekleyen : </label>
-<label id="proje-tarih"><?php echo $sonuc["tarih"]; ?></label><label id="proje-tarih">Tarih :</label>
+<label id="proje-baslik"><?php echo $sonuc["baslik"]; ?></label>
+<label id="proje-icerik"><?php echo $sonuc["icerik"]; ?></label>
+<label id="proje-ekleyen"><?php echo $user_id["mail"]; ?></label>
+<label id="proje-ekleyen">Ekleyen : </label>
+<label id="proje-tarih"><?php echo $sonuc["tarih"]; ?></label>
+<label id="proje-tarih">Tarih :</label>
+</div>
