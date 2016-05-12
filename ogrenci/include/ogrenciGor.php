@@ -4,9 +4,21 @@ $id=@$_GET["id"];
 global $conn ;
 if($conn)
 {
-	$query ="SELECT * from tbl_ogrenci inner join tbl_il on tbl_ogrenci.il=tbl_il.id  inner join tbl_ilce on tbl_ogrenci.ilce=tbl_ilce.id   inner join tbl_fakulte on tbl_ogrenci.fakulte=tbl_fakulte.id inner join tbl_uni on tbl_ogrenci.uni=tbl_uni.id INNER JOIN tbl_bolum on tbl_ogrenci.bolum=tbl_bolum.id INNER JOIN tbl_iletisim on tbl_ogrenci.user_id=tbl_iletisim.user_id INNER JOIN tbl_kullanici on tbl_ogrenci.user_id=tbl_kullanici.id where tbl_kullanici.id=".$id;
+	$query ="SELECT * from tbl_ogrenci where user_id=".$id;
 	$sonuc = mysqli_query($conn,$query);
 	$kayit=mysqli_fetch_array($sonuc);
+	$query ="SELECT * from tbl_iletisim where user_id=".$id;
+	$sonuc = mysqli_query($conn,$query);
+	$kayit2=mysqli_fetch_array($sonuc);
+	$query ="SELECT * from tbl_fakulte where id=".$kayit["fakulte"];
+	$sonuc = mysqli_query($conn,$query);
+	$kayit3=mysqli_fetch_array($sonuc);
+	$query ="SELECT * from tbl_uni where id=".$kayit["uni"];
+	$sonuc = mysqli_query($conn,$query);
+	$kayit4=mysqli_fetch_array($sonuc);
+	$query ="SELECT * from tbl_bolum where id=".$kayit["bolum"];
+	$sonuc = mysqli_query($conn,$query);
+	$kayit5=mysqli_fetch_array($sonuc);
 		
 }else
 {
@@ -36,12 +48,12 @@ if($conn)
 				<li>Temel Bilgiler</li>
 				<ul>
 				<?php 
-				if(!$kayit["web_site"]=="") 
+				if(!$kayit2["web_site"]=="") 
 				{
-					echo "<li>Web Site : <a href=\"".$kayit["web_site"]."\"><label>".$kayit["web_site"]."</label></a></li>" ;
+					echo "<li>Web Site : <a href=\"".$kayit2["web_site"]."\"><label>".$kayit2["web_site"]."</label></a></li>" ;
 				}
 				?>
-					<li>Telefon : <label><?php printf( $kayit["tel"]); ?></label></li>
+					<li>Telefon : <label><?php printf( $kayit2["tel"]); ?></label></li>
 					<li>Cinsiyet : <label><?php if($kayit["cinsiyet"]==1)echo "Erkek";else echo "Kadın"; ?></label></li>
 					<li>Doğum Tarihi : <label><?php echo $kayit["d_tarihi"]; ?></label></li>
 					<li>Adres : <label><?php printf( $kayit["adres"]);echo " ";printf( $kayit["ilce"]);echo " / ";printf( $kayit["il"]); ?></label></li>
@@ -50,17 +62,17 @@ if($conn)
 				<li>Eğitim Bilgileri</li>
 				<ul>
 				<?php
-				if(!$kayit["uni_adi"]=="") 
+				if(!$kayit4["uni_adi"]=="") 
 				{
-					echo "<li>Üniversite : <label>".$kayit["uni_adi"]."</label></li>";
+					echo "<li>Üniversite : <label>".$kayit4["uni_adi"]."</label></li>";
 				}
-				if(!$kayit["fakulte_adi"]=="") 
+				if(!$kayit3["fakulte_adi"]=="") 
 				{
-					echo "<li>Fakülte : <label>".$kayit["fakulte_adi"]."</label></li>";
+					echo "<li>Fakülte : <label>".$kayit3["fakulte_adi"]."</label></li>";
 				}
-				if(!$kayit["bolum_adi"]=="") 
+				if(!$kayit5["bolum_adi"]=="") 
 				{
-					echo "<li>Bölüm : <label>".$kayit["bolum_adi"]."</label></li>";
+					echo "<li>Bölüm : <label>".$kayit5["bolum_adi"]."</label></li>";
 				}
 				if(!$kayit["sinif"]=="") 
 				{
@@ -88,20 +100,21 @@ if($conn)
 				<li>Sosyal Ağlar : </li>
 				<ul>
 					<?php
-				if(!$kayit["facebook"]=="") 
+				if(!$kayit2["facebook"]=="") 
 				{
-					echo "<li><a href=\"".$kayit["facebook"]."\"><img src=\"img/facebook.png\"></img></a>";
+					echo "<li><a href=\"".$kayit2["facebook"]."\"><img src=\"img/facebook.png\"></img></a>";
 				}	
-				if(!$kayit["github"]=="") 
+				if(!$kayit2["github"]=="") 
 				{
-					echo "<a href=\"".$kayit["github"]."\"><img src=\"img/github.png\"></img></a>";
+					echo "<a href=\"".$kayit2["github"]."\"><img src=\"img/github.png\"></img></a>";
 				}
 					?>
-					<a href="<?php printf( $kayit["gmail"]); ?>"><img src="img/gmail.png"></img></a></li>
+					<a href="<?php printf( $kayit2["gmail"]); ?>"><img src="img/gmail.png"></img></a></li>
 				</ul>
 				
 				
 			</ol>
+			<a id="mesajGonderButon" href="index.php?sayfa=mesajlar&id=<?php echo $id;?>">Mesaj Gönder</a>
 		</h3>
 		
 	</div>

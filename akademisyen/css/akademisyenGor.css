@@ -1,3 +1,13 @@
+#mesajGonderButon
+{
+	float:right;
+	margin-top:30px;
+	border:3px solid #186;
+	padding:3px;
+	background-color:#2B5063;
+	text-decoration:none;
+	color:#FFF;
+}
 #akademisyenGor{
 	height:100%;
 	width:100%;
@@ -36,7 +46,7 @@
 #akademisyenGor ul 
 {
 	list-style-type:none;
-	margin-bottom:5px;
+	margin-bottom:6px;
 }
 #akademisyenGor ol 
 {
@@ -53,4 +63,14 @@
 	width:30px;
 	height:30px;
 	border-radius:50%;
+}
+#mesajGonderButon
+{
+	float:right;
+	margin-top:30px;
+	border:3px solid #186;
+	padding:3px;
+	background-color:#2B5063;
+	text-decoration:none;
+	color:#FFF;
 }

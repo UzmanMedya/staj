@@ -4,10 +4,17 @@ $id=@$_GET["id"];
 global $conn ;
 if($conn)
 {
-	$query ="SELECT * FROM tbl_isyeri  INNER JOIN tbl_proje on tbl_isyeri.user_id = tbl_proje.user_id  INNER JOIN tbl_iletisim on tbl_iletisim.user_id=tbl_isyeri.user_id INNER JOIN tbl_hakkimizda on tbl_isyeri.user_id=tbl_hakkimizda.user_id where tbl_kullanici.id=".$id;
+	$query ="SELECT * FROM tbl_isyeri where user_id=".$id;
 	$sonuc = mysqli_query($conn,$query);
 	$kayit=mysqli_fetch_array($sonuc);
+	
+	$query ="SELECT * FROM tbl_iletisim where user_id=".$id;
+	$sonuc = mysqli_query($conn,$query);
+	$kayit2=mysqli_fetch_array($sonuc);
 		
+	$query ="SELECT * FROM tbl_hakkimizda where user_id=".$id;
+	$sonuc = mysqli_query($conn,$query);
+	$kayit3=mysqli_fetch_array($sonuc);
 }else
 {
 	echo "baðlanmadý";
@@ -36,15 +43,15 @@ if($conn)
 				<li>Temel Bilgiler</li>
 				<ul>
 				<?php 
-				if(!$kayit["web_site"]=="") 
+				if(!$kayit2["web_site"]=="") 
 				{
-					echo "<li>Web Site : <a href=\"".$kayit["web_site"]."\"><label>".$kayit["web_site"]."</label></a></li>";
+					echo "<li>Web Site : <a href=\"".$kayit2["web_site"]."\"><label>".$kayit2["web_site"]."</label></a></li>";
 				}
 				?>
 					<?php 
-				if(!$kayit["tel"]=="") 
+				if(!$kayit2["tel"]=="") 
 				{
-					echo "<li>Telefon : <label>".$kayit["tel"]."</label></li>";
+					echo "<li>Telefon : <label>".$kayit2["tel"]."</label></li>";
 				}
 				?>
 					<li>Adres : <label><?php echo $kayit["adres"];echo " ";echo $kayit["ilce"];echo " / ";echo $kayit["il"]; ?></label></li>
@@ -54,10 +61,10 @@ if($conn)
 				
 				</ul>
 				<?php 
-				if(!$kayit["baslik"]=="" && !$kayit["icerik"]) 
+				if(!$kayit3["baslik"]=="" && !$kayit3["icerik"]) 
 				{
 					echo "<li>Hakkýmýzda</li><ul>
-					<li>".$kayit["baslik"].": <label>".$kayit["icerik"]." </label></li>
+					<li>".$kayit3["baslik"].": <label>".$kayit3["icerik"]." </label></li>
 					
 					
 				</ul>";
@@ -99,20 +106,21 @@ if($conn)
 				<li>Sosyal Aðlar : </li>
 				<ul>
 				<?php
-				if(!$kayit["facebook"]=="") 
+				if(!$kayit2["facebook"]=="") 
 				{
-					echo "<li><a href=\"".$kayit["facebook"]."\"><img src=\"img/facebook.png\"></img></a>";
+					echo "<li><a href=\"".$kayit2["facebook"]."\"><img src=\"img/facebook.png\"></img></a>";
 				}	
-				if(!$kayit["github"]=="") 
+				if(!$kayit2["github"]=="") 
 				{
-					echo "<a href=\"".$kayit["github"]."\"><img src=\"img/github.png\"></img></a>";
+					echo "<a href=\"".$kayit2["github"]."\"><img src=\"img/github.png\"></img></a>";
 				}
 					?>
-					<a href="<?php echo $kayit["gmail"]; ?>"><img src="img/gmail.png"></img></a></li>
+					<a href="<?php echo $kayit2["gmail"]; ?>"><img src="img/gmail.png"></img></a></li>
 				</ul>
 				
 				
 			</ol>
+			<a id="mesajGonderButon" href="index.php?sayfa=mesajlar&id=<?php echo $id;?>">Mesaj Gönder</a>
 		</h3>
 		
 	</div>
