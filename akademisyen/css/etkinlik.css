@@ -1,0 +1,69 @@
+#akademisyen_etkinlik{
+	width:100%;
+}
+#akademisyen_etkinlik_baslik{
+	width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#akademisyen_etkinlik_onsoz{
+	width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#akademisyen_etkinlik_icerik{
+	width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#akademisyen_etkinlik_textarea{
+	width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#akademisyen_etkinlik_ekle{
+	width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#akademisyen_etkinlik_duzenle{
+	width: 10%;
+    background-color: #6699FF ;
+    color: white;
+    padding: 3px;
+    margin: 8px 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#akademisyen_etkinlik_sil{
+	width: 10%;
+    background-color: #CC6666;
+    color: white;
+    padding: 3px;
+    margin: 8px 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}

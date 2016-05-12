@@ -22,6 +22,10 @@
 			<li>DUYURULAR</li>
 				
 		</a>
+		<a href="index.php?sayfa=etkinlikler">
+			<li>ETKİNLİKLER</li>
+				
+		</a>
 		<a href="index.php?sayfa=hakkinda">
 			<li>HAKKINDA</li>
 				

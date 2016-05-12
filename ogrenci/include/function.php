@@ -34,6 +34,9 @@
 		else if($sayfa_adi=="duyurular"){
 			include_once("duyuru.php");
 		}
+		else if($sayfa_adi=="etkinlikler"){
+			include_once("etkinlik.php");
+		}
 		else
 		{
 		  include_once("profil.php");
@@ -292,6 +295,16 @@ function projeEkle($proje)
 	function duyuru_getir(){
 		global $conn;
 		$query="SELECT * FROM tbl_duyuru";
+		$sorgu=mysqli_query($conn,$query);
+		
+		//$sql=mysqli_fetch_array($sorgu);
+		
+		//return $sql;
+		return $sorgu;
+	}
+	function etkinlik_getir(){
+		global $conn;
+		$query="SELECT * FROM tbl_etkinlik";
 		$sorgu=mysqli_query($conn,$query);
 		
 		//$sql=mysqli_fetch_array($sorgu);

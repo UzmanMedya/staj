@@ -99,6 +99,9 @@
 		else if($sayfa_adi=="duyurular"){
 			include_once("duyuru.php");
 		}
+		else if($sayfa_adi=="etkinlikler"){
+			include_once("etkinlik.php");
+		}
 		else
 		{
 		  include_once("include/profil.php");
@@ -320,6 +323,36 @@
 	function duyuru_sil($id){
 		global $conn;
 		$query="DELETE FROM tbl_duyuru WHERE id=".$id;
+		$sonuc=mysqli_query($conn,$query);
+	}
+	function etkinlik_gotur($etkinlik){
+		global $conn;
+		$tarih=date('Ymd');
+		$query;
+		$baslik=htmlspecialchars($etkinlik->getBaslik());
+		$icerik=htmlspecialchars($etkinlik->getIcerik());
+		if($etkinlik->getId()==-1){
+			$query="INSERT INTO tbl_etkinlik(baslik, icerik, tarih)
+			VALUES ('".$baslik."','".$icerik."',".$tarih.")";
+		}
+		else{
+			$query="UPDATE tbl_etkinlik set baslik='$baslik',icerik='$icerik',tarih='$tarih' where id=".$etkinlik->getId();
+		}
+		$sonuc=mysqli_query($conn,$query);
+	}
+	function etkinlik_getir(){
+		global $conn;
+		$query="SELECT * FROM tbl_etkinlik";
+		$sorgu=mysqli_query($conn,$query);
+		
+		//$sql=mysqli_fetch_array($sorgu);
+		
+		//return $sql;
+		return $sorgu;
+	}
+	function etkinlik_sil($id){
+		global $conn;
+		$query="DELETE FROM tbl_etkinlik WHERE id=".$id;
 		$sonuc=mysqli_query($conn,$query);
 	}
 
