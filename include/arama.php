@@ -1,24 +1,4 @@
-<?php
 
-if(@$_POST["ara"])
-{
-	
-	$yetki=@$_POST["yetki"];
-	if($yetki==1)//ogrenci
-	{
-		aramaYap($yetki,@$_POST["adi"],@$_POST["soyadi"],@$_POST["icerik"]);
-	}
-	else if($yetki==2)//akademisyen
-	{
-		aramaYap($yetki,@$_POST["adi"],@$_POST["soyadi"],@$_POST["icerik"]);
-	}else if($yetki==3)//işveren
-	{
-		aramaYap($yetki,@$_POST["adi"],@$_POST["soyadi"],@$_POST["icerik"]);
-	}
-	
-}
-
-?>
 
 <form name="form1" method="post" action="">
 <div id="genel">
@@ -58,7 +38,32 @@ if(@$_POST["ara"])
     <div id="girisyap">
 <input name="ara" type="submit" value="ARA" class="btn btn-default" />
 </div>
-</div>
-</div>
+
+
 
 </form>
+</br>
+
+<?php
+
+if(@$_POST["ara"])
+{
+	
+	$yetki=@$_POST["yetki"];
+	if($yetki==1)//ogrenci
+	{
+		aramaYap($yetki,@$_POST["adi"],@$_POST["soyadi"],@$_POST["icerik"]);
+	}
+	else if($yetki==2)//akademisyen
+	{
+		aramaYap($yetki,@$_POST["adi"],@$_POST["soyadi"],@$_POST["icerik"]);
+	}else if($yetki==3)//işveren
+	{
+		aramaYap($yetki,@$_POST["adi"],@$_POST["soyadi"],@$_POST["icerik"]);
+	}
+	
+}
+
+?>
+</div>
+</div>
