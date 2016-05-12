@@ -1,7 +1,8 @@
 <?php
 	
 	$id=$_SESSION["staj"]->getID();
-	
+	$isyeriid=@$_GET["id"];
+	global $conn;
 
 	if(@$_POST["kaydet"])
 	{
@@ -9,8 +10,7 @@
 		$onsoz=$_POST["onsoz"];
 		$icerik=$_POST["icerik"];
 		$tarih=$_POST["tarih"];
-		echo $ad;
-		global $conn;
+		
 		$query ="Select * from tbl_isyeri where adi=\"".$ad."\"";
 							
 		$result =mysqli_query($conn,$query);
@@ -19,8 +19,7 @@
 		{
 			
 			$array=mysqli_fetch_array($result);
-			echo $array["id"]." ".$id." ".$tarih." ".$onsoz." ".$icerik;
-			$query ="INSERT INTO tbl_basvuru(isyeri_id, ogrenci_id, tarih, onsoz, aciklama) VALUES (".$array["id"].",".$id.",".$tarih.",'".$onsoz."','".$icerik."')";
+			$query ="INSERT INTO tbl_basvuru(isyeri_id, ogrenci_id, tarih, onsoz, aciklama) VALUES (".$array["user_id"].",".$id.",".$tarih.",'".$onsoz."','".$icerik."')";
 							
 			$result =mysqli_query($conn,$query);
 			if($result)
@@ -34,8 +33,14 @@
 			echo "çalýþmadý";
 		}
 	}
-
-	
+		
+		$query2 ="Select * from tbl_isyeri where user_id=".$isyeriid;
+		$result2 =mysqli_query($conn,$query2);
+		$array;
+		if(mysqli_num_rows($result2) >=1)
+		{
+			$array=mysqli_fetch_array($result2);
+		}
 	
 ?>
 <div id="govde">
@@ -43,7 +48,7 @@
 	<div class="satir">
 		<div class="sol">Firma Adý:</div>
 		<div class="sag">
-			<input type="text" name="ad" class="form-control" />
+			<input type="text" name="ad" class="form-control" value="<?php echo $array["adi"]; ?>"/>
 		</div>
 	</div>
 	<div class="satir">

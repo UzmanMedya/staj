@@ -21,6 +21,7 @@
 			$sonuc=mysqli_query($conn,$sorgu);
 		}
 	}
+
 	
 ?>
 

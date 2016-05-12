@@ -89,7 +89,7 @@ if($conn)
 				
 				
 			</ol>
-			<a id="mesajGonderButon" href="index.php?sayfa=mesajlar&id=<?php echo $id;?>">Mesaj Gönder</a>
+			<a id="mesajGonderButon" href="index.php?sayfa=mesajlar">Mesaj Gönder</a>
 		</h3>
 		
 	</div>
