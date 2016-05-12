@@ -43,6 +43,7 @@
 							$foto ="../profil/user.png";
 						}
 				?>	<div class="bildirim">
+					<a href="<?php echo 'index.php?sayfa=mesajlar&id='.$id;?>">
 						<div>
 							<img src="<?php echo $foto; ?>"/>
 							<span><?php echo $isim ?></span><br/>
