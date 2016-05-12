@@ -18,6 +18,10 @@
 			<li>İLETİŞİM</li>
 				
 		</a>
+		<a href="index.php?sayfa=duyurular">
+			<li>DUYURULAR</li>
+				
+		</a>
 		<a href="index.php?sayfa=hakkinda">
 			<li>HAKKINDA</li>
 				

@@ -13,7 +13,7 @@
 				echo $sql["baslik"];
 			?></label>
 			<label id="tarih"><?php
-				echo $sql["tarih"];
+				echo "Tarih: ".$sql["tarih"];
 			?></label>
 			<label id="icerik"><?php
 				echo $sql["icerik"];

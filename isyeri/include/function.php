@@ -31,6 +31,9 @@
 		else if($sayfa_adi=="isyeriGor"){
 			include_once("include/isyeriGor.php");
 		}
+		else if($sayfa_adi=="duyurular"){
+			include_once("duyuru.php");
+		}
 		else
 		{
 		  include_once("profil.php");
@@ -285,6 +288,16 @@
 		$sorgu=mysqli_query($conn,$query);
 		$sql=mysqli_fetch_array($sorgu);
 		return $sql;
+	}
+	function duyuru_getir(){
+		global $conn;
+		$query="SELECT * FROM tbl_duyuru";
+		$sorgu=mysqli_query($conn,$query);
+		
+		//$sql=mysqli_fetch_array($sorgu);
+		
+		//return $sql;
+		return $sorgu;
 	}
 
 

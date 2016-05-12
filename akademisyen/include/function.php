@@ -96,6 +96,9 @@
 		else if($sayfa_adi=="isyeriGor"){
 			include_once("../isyeri/include/isyeriGor.php");
 		}
+		else if($sayfa_adi=="duyurular"){
+			include_once("duyuru.php");
+		}
 		else
 		{
 		  include_once("include/profil.php");
@@ -289,8 +292,36 @@
 		$sql=mysqli_fetch_array($sorgu);
 		return $sql;
 	}
-	
-
+	function duyuru_gotur($duyuru){
+		global $conn;
+		$tarih=date('Ymd');
+		$query;
+		$baslik=htmlspecialchars($duyuru->getBaslik());
+		$icerik=htmlspecialchars($duyuru->getIcerik());
+		if($duyuru->getId()==-1){
+			$query="INSERT INTO tbl_duyuru(baslik, icerik, tarih)
+			VALUES ('".$baslik."','".$icerik."',".$tarih.")";
+		}
+		else{
+			$query="UPDATE tbl_duyuru set baslik='$baslik',icerik='$icerik',tarih='$tarih' where id=".$duyuru->getId();
+		}
+		$sonuc=mysqli_query($conn,$query);
+	}
+	function duyuru_getir(){
+		global $conn;
+		$query="SELECT * FROM tbl_duyuru";
+		$sorgu=mysqli_query($conn,$query);
+		
+		//$sql=mysqli_fetch_array($sorgu);
+		
+		//return $sql;
+		return $sorgu;
+	}
+	function duyuru_sil($id){
+		global $conn;
+		$query="DELETE FROM tbl_duyuru WHERE id=".$id;
+		$sonuc=mysqli_query($conn,$query);
+	}
 
 
 ?>

@@ -26,7 +26,7 @@
 				$sonuc=mysqli_query($conn,$sorgu);
 				echo "<ul>";
 				while($sonuc2=mysqli_fetch_array($sonuc)){
-					echo "<li><a href=index.php?sayfa=duyuru&id=".$sonuc2["id"].">".$sonuc2["baslik"]."</a></li><br />";//a href=index.php?sayfa=".$sonuc_duyuru["id"].">".$sonuc_duyuru["baslik"]."</a></li><br />";
+					echo "<li><a href=index.php?sayfa=duyuru&id=".$sonuc2["id"].">".$sonuc2["baslik"]."</a></li>";//a href=index.php?sayfa=".$sonuc_duyuru["id"].">".$sonuc_duyuru["baslik"]."</a></li><br />";
 					//id=".$sonuc2["id"]."
 				}
 				echo "</ul>";
@@ -42,7 +42,7 @@
 				$sonuc=mysqli_query($conn,$sorgu);
 				echo "<ul>";
 				while($sonuc2=mysqli_fetch_array($sonuc))
-					echo "<li><a href=index.php?sayfa=etkinlik&id=".$sonuc2["id"].">".$sonuc2["baslik"]."</a></li><br />";//a href=index.php?sayfa=".$sonuc_duyuru["id"].">".$sonuc_duyuru["baslik"]."</a></li><br />";
+					echo "<li><a href=index.php?sayfa=etkinlik&id=".$sonuc2["id"].">".$sonuc2["baslik"]."</a></li>";//a href=index.php?sayfa=".$sonuc_duyuru["id"].">".$sonuc_duyuru["baslik"]."</a></li><br />";
 				echo "</ul>";
 			?>
 		</div>
