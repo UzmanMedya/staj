@@ -1,10 +1,10 @@
 <?php
-	session_start();
-	require_once("include/config.php");
-	$_SESSION['uyeId']=1;
 	
-	if($_POST){
-		if($_POST["m"]=="gitti"){
+	require_once("include/config.php");
+	$_SESSION['staj']->getID();
+	
+	if(@$_POST){
+		if(@$_POST["m"]=="gitti"){
 			//Mesaj gönderme iþlemini burada yapýyorum
 			$alici=$_POST["alici"];
 			$konu=$_POST["konu"];
@@ -39,15 +39,15 @@
 	<div id="mesajright">
 		<ul>
 			<li id="yeniTikla">
-				<img class="mesajimg" src="indir.jpg" />
+				<img class="mesajimg" src="../indir.jpg" />
 				<span>Yeni Mesaj</span>
 			</li>
 			<li id="gelenTikla"  >
-				<img class="mesajimg" src="indir.jpg" />
+				<img class="mesajimg" src="../indir.jpg" />
 				<span>Gelen Kutusu</span>
 			</li>
 			<li id="gidenTikla" >
-					<img class="mesajimg" src="indir.jpg" />
+					<img class="mesajimg" src="../indir.jpg" />
 				<span>Giden Kutusu</span>
 			</li>
 		</ul>
@@ -72,7 +72,7 @@
 		<?php
 		global $conn;
 
-		$sorgu = "SELECT `adi`,`soyadi`,`foto`,`tarih`,`tbl_mesaj`.`id` FROM `tbl_mesaj` LEFT JOIN `tbl_kullanici` ON tbl_mesaj.gonderen_id = tbl_kullanici.id WHERE `alici_id`='".$_SESSION['uyeId']."'";
+		$sorgu = "SELECT `adi`,`soyadi`,`foto`,`tarih`,`tbl_mesaj`.`id` FROM `tbl_mesaj` LEFT JOIN `tbl_kullanici` ON tbl_mesaj.gonderen_id = tbl_kullanici.id WHERE `alici_id`='".$_SESSION['staj']->getID()."'";
 		$sonuc=mysqli_query($conn,$sorgu);
 
 		if($sonuc){
@@ -84,7 +84,7 @@
 							
 							<div id="'.$sutun[4].'" class="mesajiicerik" ">
 							
-								<img src="'.$sutun[2].'"/>	
+								<img src="../'.$sutun[2].'"/>	
 								<span>'.$sutun[0]." ".$sutun[1].'</span><span class="mesaj-tarih">'.$sutun[3].'</span>
 								<div class="mesaj-konu"id="msjkonu"></div>
 							</div>
@@ -123,7 +123,7 @@
 		<?php
 		global $conn;
 
-		$sorgu = "SELECT `adi`,`soyadi`,`foto`,`tarih`,`tbl_mesaj`.`id` FROM `tbl_mesaj` LEFT JOIN `tbl_kullanici` ON tbl_mesaj.alici_id = tbl_kullanici.id WHERE `gonderen_id`='".$_SESSION['uyeId']."'";
+		$sorgu = "SELECT `adi`,`soyadi`,`foto`,`tarih`,`tbl_mesaj`.`id` FROM `tbl_mesaj` LEFT JOIN `tbl_kullanici` ON tbl_mesaj.alici_id = tbl_kullanici.id WHERE `gonderen_id`='".$_SESSION['staj']->getID()."'";
 		$sonuc=mysqli_query($conn,$sorgu);
 
 		if($sonuc){
@@ -134,7 +134,7 @@
 							<input type="checkbox" class="checkbox" />
 							
 							<div id="'.$sutun[4].'" class="mesajiicerikGiden"">
-								<img src="'.$sutun[2].'"/>	
+								<img src="../'.$sutun[2].'"/>	
 								<span>'.$sutun[0]." ".$sutun[1].'</span><span class="mesaj-tarih">'.$sutun[3].'</span>
 								<div class="mesaj-konu" id="msjkonu"></div>
 							</div>
@@ -158,7 +158,7 @@
 	
 <div id="mesajlarim" >
 	<div id="yenimesajlarim">
-		<form action="brojem.php?m=gitti" method="post">
+		<form action="index.php?sayfa=mesajlar&m=gitti" method="post">
 			<table border="0" cellpadding="10px">
 				<tr>
 					<td id="gonderenTd">
@@ -326,7 +326,7 @@ $(document).ready(function()
 		console.log("this: "+ this.id);
 		$.ajax({
 		  method: "POST",
-		  url: "mesajIcerikGetir.php",
+		  url: "../mesajIcerikGetir.php",
 		  data: { "q" : this.id },
 		  dataType: "json",
 		  success:function(veri){
@@ -369,7 +369,7 @@ $(document).ready(function()
 		console.log("this: "+ this.id);
 		$.ajax({
 		  method: "POST",
-		  url: "mesajGidenMesajGetir.php",
+		  url: "../mesajGidenMesajGetir.php",
 		  data: { "q" : this.id },
 		  dataType: "json",
 		  success:function(veri){

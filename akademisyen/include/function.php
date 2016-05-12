@@ -56,6 +56,9 @@
 		else if($sayfa_adi=="akademisyen"){
 			include_once("include/sosyalHesaplar.php");
 		}
+		else if($sayfa_adi=="mesajlar"){
+			include_once("../brojem.php");
+		}
 		else if($sayfa_adi=="akademisyenGor"){
 			include_once("include/akademisyenGor.php");
 		}

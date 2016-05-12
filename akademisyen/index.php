@@ -6,6 +6,7 @@
 <link rel="stylesheet" type="text/css" href="css/mainFooter.css">
 
 <link rel="stylesheet" type="text/css" href="css/solMenuContent.css">
+<link rel="stylesheet" type="text/css" href="css/projem.css">
 <link rel="stylesheet" type="text/css" href="css/akademisyenGor.css">
 <link rel="stylesheet" type="text/css" href="css/mainHeader.css">
 <link rel="stylesheet" type="text/css" href="css/mainStyle.css">
