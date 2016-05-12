@@ -19,8 +19,6 @@
 		<div class="duyurular">
 		DUYURULAR<br/>
 			<?php
-			function duyuru(){
-				
 				global $conn;
 				$sorgu="select*from tbl_duyuru";
 				$sonuc=mysqli_query($conn,$sorgu);
@@ -30,8 +28,6 @@
 					//id=".$sonuc2["id"]."
 				}
 				echo "</ul>";
-			}
-			duyuru();
 			?>
 		</div>
 		<div class="etkinlikler">

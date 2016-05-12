@@ -3,8 +3,33 @@
 	height:100%;
 }
 #baslik{
-	font-size:30px;
+    width: 50%;
+    padding: 7px 15px;
+    margin: 4px 0;
+    font-size: 18px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 #icerik{
-	font-size:30px;
+    width: 100%;
+    padding: 7px 15px;
+    margin: 4px 0;
+    font-size: 18px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#tarih{
+    width: 50%;
+    padding: 7px 15px;
+    margin: 4px 0;
+    font-size: 18px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+	float:right;
 }
