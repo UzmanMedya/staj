@@ -13,7 +13,7 @@ Proje Adı:
   <label id="proje_hakkinda_icerik">
 Tarih:
 </label>
-<input type="date" name="tarih" class="form-control" value="<?php echo @$_POST['tarih'];  ?>>
+<input type="date" name="tarih" class="form-control" value=<?php echo @$_POST['tarih'];  ?>>
 <label id="proje_hakkinda_icerik">
 İçerik :
 </label>
