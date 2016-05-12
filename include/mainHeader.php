@@ -15,7 +15,7 @@
 		<a href="index.php?sayfa=giris"><div class="headerButon"><span>Giriş Yap</span>
 		</div></a>
 		<a href="index.php?sayfa=arama"><div class="aramaButon">
-		<span><img  title="ara" src="ara.png" style=" height: 30px; width:50px; "> </span></div>
+		<span><img  title="ara" src="ara.png" style=" height: 30px; width:30px; "> </span></div>
 		</a>
 	</div>
 	<div class="clear"></div>

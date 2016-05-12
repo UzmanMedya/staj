@@ -51,7 +51,7 @@
     </div>
 	
     <div id="girisyap">
-<input name="ara" type="submit" value="ara" class="btn btn-default" />
+<input name="ara" type="submit" value="ARA" class="btn btn-default" />
 </div>
 </div>
 </div>
