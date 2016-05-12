@@ -85,3 +85,34 @@ width: 100%;
 .buttonSosyalHesapKaydet:hover {
     background-color: #45a049;
 }
+#genel
+{
+    min-width:500px;
+    margin:auto;
+    width:50%;
+}
+.satir
+{       
+    min-height:30px;
+    min-width:500px; 
+    margin-top:25px;
+    text-align:center;  
+}
+
+.sag {    
+    width:80%;
+    float:left;
+    text-align:left;     
+}
+.sol {
+    width:20%;  
+    float:left;
+    text-align:left;
+}
+.iletisimsol{
+    width:48%;  
+    float:left;
+    text-align:left;
+    margin-left:1%;
+    
+}
