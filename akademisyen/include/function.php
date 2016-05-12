@@ -3,6 +3,7 @@
 	require_once("../session.php");
 	
 	session_start();
+	bildirim_kontrol();
 	
 	function sosyalHesaplarKaydet()
 	{
@@ -50,7 +51,13 @@
 		$user_id=$_SESSION["staj"]->getID();
 		$query ="SELECT U.id,U.baslik,K.adi,K.soyadi,K.foto,B.id as 'bil_id' from tbl_bildirimlerim as B INNER JOIN tbl_userbildirim as U on U.id = B.bildirim_id INNER JOIN tbl_kullanici as
 		 K on K.id =U.user_id where B.durum = 0 and B.user_id =$user_id Limit 4";
+		return mysqli_query($conn,$query);
+	}
 
+	function bildirim_kontrol()
+	{	
+		global $conn;
+		$user_id=$_SESSION["staj"]->getID();
 		 $query1 ="select id from tbl_bildirimlerim where durum =0 and user_id =$user_id";
 		if($sonuc=mysqli_query($conn,$query1))
 		{
@@ -63,9 +70,7 @@
 			
 			$_SESSION["staj"]->setBildirim($b_sayi);
 		}
-		return mysqli_query($conn,$query);
 	}
-
 	function sayfa_getir()
 	{
 		$sayfa_adi=@$_GET["sayfa"];

@@ -3,6 +3,7 @@
 	require_once("../include/config.php");
 	require_once("../session.php");
 	session_start();
+	bildirim_kontrol();
 
 	function sayfa_getir()
 	{
@@ -103,6 +104,23 @@
 			$_SESSION["staj"]->setBildirim($b_sayi);
 		}
 		return mysqli_query($conn,$query);
+	}
+
+	function bildirim_kontrol(){
+		global $conn;
+		$user_id=$_SESSION["staj"]->getID();
+		$query1 ="select id from tbl_bildirimlerim where durum =0 and user_id =$user_id";
+		if($sonuc=mysqli_query($conn,$query1))
+		{
+			$b_sayi=mysqli_num_rows($sonuc);
+			$query1 ="select id from tbl_mesaj where durum =0 and alici_id =$user_id";
+			if($sonuc=mysqli_query($conn,$query1))
+			{
+				$b_sayi +=mysqli_num_rows($sonuc);
+			}
+			
+			$_SESSION["staj"]->setBildirim($b_sayi);
+		}
 	}
 
 	function temizle($text)

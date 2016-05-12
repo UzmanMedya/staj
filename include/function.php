@@ -105,7 +105,7 @@
 				if($sonuc=mysqli_query($conn,$query))
 				{
 					$b_sayi=mysqli_num_rows($sonuc);
-					$query ="select id from tbl_mesaj where durum =0 and alici_id =$user_id";
+					$query ="select id from tbl_mesaj where durum =0 and alici_id =$id";
 					if($sonuc=mysqli_query($conn,$query))
 					{
 						$b_sayi +=mysqli_num_rows($sonuc);
