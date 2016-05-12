@@ -48,7 +48,7 @@
 		{
 			return $this->bildirim;
 		}
-		function SetBildirim($bildirim_sayisi)
+		function setBildirim($bildirim_sayisi)
 		{
 			return $this->bildirim=$bildirim_sayisi;
 		}

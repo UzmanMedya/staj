@@ -113,9 +113,10 @@
   	float: left;
   	margin-right: 5px;
   }
-#bildirim-icerik .bildirim a label,.bildirim a span{
-	
+#bildirim-icerik .bildirim a div label,.bildirim a span{
 	overflow: hidden;
+    height: 15px;
+    width: 200px;
 }
 .bildirim a label{
 	font-size: 12px;

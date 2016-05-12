@@ -89,6 +89,18 @@
 			if(!is_null($row_u))
 			{
 				$user=new Session($id,$adi,$soyadi,$mail,$rol); //array("ID"=>$id,"Adi"=>$adi,"Soyadi"=>$soyadi,"Mail"=>$mail,"Rol"=>$rol);
+				$query ="select id from tbl_bildirimlerim where durum =0 and user_id =$id";
+				if($sonuc=mysqli_query($conn,$query))
+				{
+					$b_sayi=mysqli_num_rows($sonuc);
+					$query ="select id from tbl_mesaj where durum =0 and alici_id =$user_id";
+					if($sonuc=mysqli_query($conn,$query))
+					{
+						$b_sayi +=mysqli_num_rows($sonuc);
+					}
+					$user->setBildirim($b_sayi);
+					echo $user->getBildirim();
+				}
 				$_SESSION["staj"] =$user;
 				if($rol == "1")
 				{
