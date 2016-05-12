@@ -6,7 +6,7 @@
 				</a>
 		</div>
 		<div id="headerSlogan">
-		İŞ YERİ EĞİTİMİ SİSTEMİ
+		İŞYERİ EĞİTİM SİSTEMİ
 		</div>
 	</div>
 	<div id="headerRight">

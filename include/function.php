@@ -35,25 +35,20 @@
 	}
 	function aramaYap($yetki,$ad,$soyad,$icerik)
 	{
-		echo "YETKİ".$yetki."<br/>";
-		echo "AD".$ad."<br/>";
-		echo "SOYAD".$soyad."<br/>";
-		echo "İCERİK".$icerik."<br/>";
-		echo"Bu Fonksiyonda Arama Kodları Yapzılacak";
-		
-		
-			global $conn;
+
+		global $conn;
 		$sorgu = "SELECT * FROM tbl_kullanici WHERE adi LIKE '%$ad%' or soyadi LIKE '%$soyad%'   ";  
 	    $sonuc=mysqli_query($conn,$sorgu);
 		 if($sonuc)
 		 {
 			 while($sutun=mysqli_fetch_array($sonuc))
 			{
-			if($yetki==1){
-					$alan="ogrenci";
-					$rol="ogrenciGor";
-			}
-				else if($yetki==2){
+				if($yetki==1){
+						$alan="ogrenci";
+						$rol="ogrenciGor";
+				}
+				else if($yetki==2)
+				{
 					$alan="akademisyen";
 					$rol="akademisyenGor";
 				}
@@ -61,16 +56,13 @@
 				{	$alan="isyeri";
 					$rol="isyeriGor";
 				}
-				
-			 echo "<a class='arama_link' href='".$alan."/index.php?sayfa=".$rol."&id=".$sutun["id"]."'><div class='arama_icerik'>".$sutun["adi"]."   ".$sutun["soyadi"]." </div></a><br>";
+				echo "<a class='arama_link' href='".$alan."/index.php?sayfa=".$rol."&id=".$sutun["id"]."'><div class='arama_icerik'>".$sutun["adi"]."   ".$sutun["soyadi"]." </div></a><br>";
 			}
-			 }
-			 else
-			 {
-				 echo "Aranan Kayıt Bulunamadı";
-			 }
-		
-		
+		}
+		else
+		{
+			echo "Aranan Kayıt Bulunamadı";
+		}
 	}
 	function temizle($text)
 	{

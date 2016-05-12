@@ -3,7 +3,6 @@
 	require_once("../include/config.php");
 	require_once("../session.php");
 	session_start();
-	bildirim_kontrol();
 
 	function sayfa_getir()
 	{

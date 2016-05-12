@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 <title></title>
@@ -16,15 +16,13 @@
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/duyuru.css" />
 <link rel="stylesheet" type="text/css" href="css/etkinlik.css" />
+<meta charset="utf-8"/>
 <?php
 	include_once("/include/function.php");
 	include_once("session.php");
-	
 ?>
-<meta charset="utf-8"/>
 </head>
-<body>
-	<div id="header">
+<body><div id="header">
 	<?php include_once("/include/mainHeader.php");?>
 	</div>
 	<div id="main">

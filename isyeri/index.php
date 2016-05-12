@@ -55,6 +55,7 @@
 		<?php 
 		include_once("/include/function.php");
 		session_kontrol();
+		bildirim_kontrol();
 		include_once("/include/mainHeader.php");?>
 	</div>
 	<div id="main">

@@ -3,7 +3,7 @@
 	require_once("../session.php");
 	
 	session_start();
-	bildirim_kontrol();
+	
 	
 	function sosyalHesaplarKaydet()
 	{

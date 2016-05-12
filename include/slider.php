@@ -1,4 +1,4 @@
-ï»¿<div class="ana" >
+<div class="ana" >
 	<div class="gosteri">
 		<ul>
 			<li><img src="img/1.jpg" title="awd" class="slimg" /></li>
@@ -31,7 +31,7 @@
 			?>
 		</div>
 		<div class="etkinlikler">
-			ETKÄ°NLÄ°KLER<br/>
+			ETKÝNLÝKLER<br/>
 			<?php
 				global $conn;
 				$sorgu="select*from tbl_etkinlik";
