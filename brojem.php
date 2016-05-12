@@ -32,6 +32,32 @@
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <link href="projem.css" rel="stylesheet" type="text/css">
 
+<script language="javascript" type="text/javascript">
+			$(function()
+			{
+				$(".arama_sonuc").hide();
+				$("input[name=alici]").keyup(function(){
+					var value=$(this).val();
+					var konu="value="+value;
+					if(value!="")
+					{
+						$.ajax({
+							type:"POST",
+							url:"include/ajax.php",
+							data:konu,
+							success:function(sonuc)
+							{
+								$(".arama_sonuc").show().html(sonuc);
+							}
+						});
+					}
+					else{
+						$(".arama_sonuc").hide();
+					}
+				});
+			});
+		</script>
+
 </head>
 
 <body>
