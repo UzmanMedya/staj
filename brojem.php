@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 	
 	require_once("include/config.php");
 	$_SESSION['staj']->getID();
@@ -6,15 +6,13 @@
 	if(@$_POST){
 		if(@$_POST["m"]=="gitti"){
 			//Mesaj gönderme iþlemini burada yapýyorum
-			$alici=$_POST["alici"];
+			$alici=$_POST["aliciIDgiden"];
 			$konu=$_POST["konu"];
 			$alicininMesaj=$_POST["alicininMesaj"];
 			global $conn;
 			$sorgu = "INSERT INTO `tbl_mesaj`(`gonderen_id`, `alici_id`, `konu`, `mesaj`, `tarih`) 
-					VALUES ('".$_SESSION['uyeId']."' , '".$alici."' , '".$konu."' , '".$alicininMesaj."' , '11-11-2016')";
+					VALUES ('".$_SESSION['staj']->getID()."' , '".$alici."' , '".$konu."' , '".$alicininMesaj."' , '11-11-2016')";
 			$sonuc=mysqli_query($conn,$sorgu);
-			if($sonuc)
-				echo "za";
 		}
 		else{
 			//Mesaj silme iþlemini burada yapýyorum
@@ -35,7 +33,7 @@
 <script language="javascript" type="text/javascript">
 			$(function()
 			{
-				$(".arama_sonuc").hide();
+				$(".aliciarama_sonuc").hide();
 				$("input[name=alici]").keyup(function(){
 					var value=$(this).val();
 					var konu="value="+value;
@@ -43,16 +41,22 @@
 					{
 						$.ajax({
 							type:"POST",
-							url:"include/ajax.php",
+							url:"include/mesajAjax.php",
 							data:konu,
 							success:function(sonuc)
 							{
-								$(".arama_sonuc").show().html(sonuc);
+								$(".aliciarama_sonuc").show().html(sonuc);
 							}
+						});
+						$(".aliciarama_sonuc").click(function(){
+							$(".aliciarama_sonuc").hide();
 						});
 					}
 					else{
-						$(".arama_sonuc").hide();
+						$(".aliciarama_sonuc").hide();
+						$(".aliciarama_sonuc").click(function(){
+							$(".aliciarama_sonuc").hide();
+						});
 					}
 				});
 			});
@@ -110,7 +114,7 @@
 							
 							<div id="'.$sutun[4].'" class="mesajiicerik" ">
 							
-								<img src="../'.$sutun[2].'"/>	
+								<img src="'.$sutun[2].'"/>	
 								<span>'.$sutun[0]." ".$sutun[1].'</span><span class="mesaj-tarih">'.$sutun[3].'</span>
 								<div class="mesaj-konu"id="msjkonu"></div>
 							</div>
@@ -135,7 +139,7 @@
 			<center>
 			<p>
 			<div>
-				<span><b>GÝDEN KUTUSU</b></span>
+				<span><b>GÄ°DEN KUTUSU</b></span>
 				<br/>
 				<span>
 				<b>
@@ -160,7 +164,7 @@
 							<input type="checkbox" class="checkbox" />
 							
 							<div id="'.$sutun[4].'" class="mesajiicerikGiden"">
-								<img src="../'.$sutun[2].'"/>	
+								<img src="'.$sutun[2].'"/>	
 								<span>'.$sutun[0]." ".$sutun[1].'</span><span class="mesaj-tarih">'.$sutun[3].'</span>
 								<div class="mesaj-konu" id="msjkonu"></div>
 							</div>
@@ -188,7 +192,7 @@
 			<table border="0" cellpadding="10px">
 				<tr>
 					<td id="gonderenTd">
-						<strong>Gönderen:</strong>
+						<strong>GÃ¶nderen:</strong>
 					</td>
 					<td> 
 						<input type="text" id="gonderen"></input>
@@ -196,7 +200,7 @@
 				</tr>
 				<tr>
 					<td>
-						<strong>Ýleti Konusu</strong>
+						<strong>Ä°leti Konusu</strong>
 					</td>
 					<td>
 						<input type="text" id="ileti"></input>
@@ -228,15 +232,22 @@
 			<table border="0" cellpadding="10px">
 				<tr>
 					<td>
-						<strong>Alýcý:
+						<strong>AlÄ±cÄ±:
 					</td>
 					<td> 
-						<input type="text" id="alici" name="alici">
+						<div id="aliciaramabolumu">
+							 <input type="text" id="alici" name="alici">
+							 <div class="alicikarama_sonuc" style="position:absolute;">
+							 <div class="aliciarama_sonuc"  style="cursor:pointer">
+								<span>Sonuc</span>
+							 </div>
+							 </div>
+						</div>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<strong>Ýleti Konusu</strong>
+						<strong>Ä°leti Konusu</strong>
 					</td>
 					<td>
 						<input type="text" name="konu">
@@ -253,9 +264,10 @@
 				<tr>
 					<td>
 						<input type="hidden" name="m" value="gitti" />
+						<input type="hidden" name="aliciIDgiden" id ="aliciIDgidenid"></input>
 					</td>
 					<td>
-						<input type="submit" value="Gönder">
+						<input type="submit" value="GÃ¶nder">
 						<input type="reset" value="Temizle">
 					</td>
 				</tr>
@@ -430,6 +442,22 @@ $(document).ready(function()
 			
 		  }
 		});
+	});
+	
+	$(".aliciarama_sonuc").click(function(){
+	
+		var aliciAd = $(".aliciarama_icerik:hover").html();
+		console.log(aliciAd);
+		$("#alici").val(aliciAd);
+		
+		var aliciId = $(".aliciarama_icerik:hover").attr('id');
+		console.log(aliciId);
+		
+		$("#aliciIDgidenid").val(aliciId);
+		
+		
+		$(".aliciarama_sonuc").hide();
+		
 	});
 	
 	

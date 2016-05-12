@@ -162,3 +162,34 @@
 	color: #f2f2f2;
 	
 }
+
+
+#aliciaramabolumu
+{
+	
+	width:30%;
+	
+}
+#aliciarama
+{
+	width:100%;
+	border-radius:4px;
+}
+.aliciarama_icerik {
+    z-index: 999;
+    background-color: #AFA5A8;
+	
+}
+.aliciarama_icerik:hover {
+	
+	background-color:#635C5C;
+	color: #f2f2f2;
+    
+}
+.alicikarama_sonuc {
+	position:absolute;
+	z-index:9999;
+	width:12%;
+		 background-color: #AFA5A8;
+	color: #f2f2f2;
+	

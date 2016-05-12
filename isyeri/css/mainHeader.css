@@ -163,3 +163,45 @@
 	color: #f2f2f2;
 	
 }
+
+
+#aliciaramabolumu a,
+{
+	margin-top:10px;
+	float:right;
+	text-decoration:none;
+	margin-right:30px;
+}
+
+#aliciaramabolumu
+{
+	
+	width:30%;
+	margin-left:16.5%;
+	position:absolute;
+	margin-top:1px;
+	
+}
+#aliciarama
+{
+	width:100%;
+	border-radius:4px;
+}
+.aliciarama_icerik {
+    z-index: 999;
+    background-color: #AFA5A8;
+	
+}
+.aliciarama_icerik:hover {
+	
+	background-color:#635C5C;
+	color: #f2f2f2;
+    
+}
+.alicikarama_sonuc {
+	position:absolute;
+	z-index:9999;
+		 background-color: #AFA5A8;
+	color: #f2f2f2;
+	
+}
