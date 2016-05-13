@@ -1,7 +1,7 @@
 <?php
 	
 	$id=$_SESSION["staj"]->getID();
-	$isyeriid=@$_GET["id"];
+	
 	global $conn;
 
 	if(@$_POST["kaydet"])
@@ -33,13 +33,16 @@
 			echo "çalýþmadý";
 		}
 	}
-		
+		if(@$_GET["id"]!="")
+		{
+	$isyeriid=@$_GET["id"];
 		$query2 ="Select * from tbl_isyeri where user_id=".$isyeriid;
 		$result2 =mysqli_query($conn,$query2);
 		$array;
 		if(mysqli_num_rows($result2) >=1)
 		{
 			$array=mysqli_fetch_array($result2);
+		}
 		}
 	
 ?>
