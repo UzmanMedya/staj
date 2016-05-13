@@ -51,7 +51,8 @@
 	<div class="satir">
 		<div class="sol">Firma Adý:</div>
 		<div class="sag">
-			<input type="text" name="ad" class="form-control" value="<?php echo $array["adi"]; ?>"/>
+			<input type="text" name="ad" class="form-control" value="<?php if(@$_POST["kaydet"])
+	{ echo $array["adi"]; }?>"/>
 		</div>
 	</div>
 	<div class="satir">
