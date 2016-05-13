@@ -3,6 +3,7 @@
 <head>
 <title></title>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/HTML; charset=ISO-8859-9" />
 <link rel="stylesheet" type="text/css" href="css/mainFooter.css">
 <link rel="stylesheet" type="text/css" href="css/projem.css">
 <link rel="stylesheet" type="text/css" href="css/ogrenciGor.css">

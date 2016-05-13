@@ -27,6 +27,10 @@
 			<li>ETKİNLİKLER</li>
 				
 		</a>
+		<a href="index.php?sayfa=bildirimler">
+			<li>BİLDİRİMLER</li>
+				
+		</a>
 		
 		<a href="index.php?sayfa=hakkinda">
 			<li>HAKKINDA</li>

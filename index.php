@@ -3,6 +3,7 @@
 <head>
 <title></title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/HTML; charset=ISO-8859-9" />
 <link href="css/index.css" rel="stylesheet" type="text/css" />
 <link href="css/mainFooter.css" rel="stylesheet" type="text/css" />
 <link href="css/mainHeader.css" rel="stylesheet" type="text/css" />

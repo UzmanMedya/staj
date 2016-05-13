@@ -32,6 +32,10 @@
 			<li>İLETİŞİM</li>
 				
 		</a>
+		<a href="index.php?sayfa=bildirimler">
+			<li>BİLDİRİMLER</li>
+				
+		</a>
 
 	</ul>
 

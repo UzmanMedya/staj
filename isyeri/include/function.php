@@ -37,6 +37,9 @@
 		else if($sayfa_adi=="etkinlikler"){
 			include_once("etkinlik.php");
 		}
+		else if($sayfa_adi=="bildirimler"){
+			include_once("../bildirimler.php");
+		}
 		else
 		{
 		  include_once("profil.php");
