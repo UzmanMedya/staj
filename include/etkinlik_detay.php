@@ -7,8 +7,8 @@
 </title>
 </head>
 <body>
-	<form id="duyuru_detay" action="" method="post">
-		<div id="duyuru">
+	<form id="etkinlik_detay" action="" method="post">
+		<div id="etkinlik">
 			<label id="baslik"><?php
 				echo $sql["baslik"];
 			?></label>

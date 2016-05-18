@@ -1,7 +1,7 @@
 <?php
 	
 	$id=$_SESSION["staj"]->getID();
-	$isyeriid=@$_GET["id"];
+	
 	global $conn;
 
 	if(@$_POST["kaydet"])
@@ -33,13 +33,17 @@
 			echo "çalýþmadý";
 		}
 	}
-		
-		$query2 ="Select * from tbl_isyeri where user_id=".$isyeriid;
-		$result2 =mysqli_query($conn,$query2);
-		$array;
-		if(mysqli_num_rows($result2) >=1)
+		if(isset($_GET["id"]))
 		{
-			$array=mysqli_fetch_array($result2);
+			
+			$isyeriid=@$_GET["id"];
+			$query2 ="Select * from tbl_isyeri where user_id=".$isyeriid;
+			$result2 =mysqli_query($conn,$query2);
+			$array;
+			if(mysqli_num_rows($result2) >=1)
+			{
+				$array=mysqli_fetch_array($result2);
+			}
 		}
 	
 ?>
@@ -48,7 +52,8 @@
 	<div class="satir">
 		<div class="sol">Firma Adý:</div>
 		<div class="sag">
-			<input type="text" name="ad" class="form-control" value="<?php echo $array["adi"]; ?>"/>
+			<input type="text" name="ad" class="form-control" value="<?php if(isset($_GET["id"]))
+		{echo $array["adi"] ;}?>"/>
 		</div>
 	</div>
 	<div class="satir">
@@ -72,7 +77,6 @@
 		</div>
 	</div>
 	
-<input type="hidden"  name="id" value="<?php echo $array["id"]; ?>" />
 	<div class="satir">
 		<input type="submit" value="BAÞVUR" name="kaydet" class="btn btn-success btn-block" />
 	</div>
